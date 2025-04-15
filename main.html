@@ -4,18 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
+    <link rel="shortcut icon" href="./pictures/f8-logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="/main.css">
 </head>
 <body>
-    <header>
-        <h1>Trang chủ</h1>
-    </header>
-    <main>
-        <h2>Chào mừng bạn đến với trang chủ!</h2>
-        <p>Đây là một ví dụ về trang HTML đơn giản.</p>
-    </main>
-    <footer>
-        <p>&copy; 2023 Công ty của bạn. Bản quyền thuộc về bạn.</p>
-    </footer>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="./pictures/f8-logo.svg" alt="Logo" class="logo">
+                <p><strong>Học lập trình để đi làm</strong></p>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Tìm kiếm...">
+            </div>
+            <div class="account">
+                <div class="signup">
+                    <button class="btn-signup">Đăng ký</button>
+                </div>
+                <div class="login">
+                    <button class="btn-login">Đăng nhập</button>
+                </div>
+            </div>
+        </header>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="./pictures/home-1-svgrepo-com.svg" alt="HomePage">
+                        <p>Trang chủ</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./pictures/path-fill-svgrepo-com.svg" alt="HomePage">
+                        <p>Lộ trình</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./pictures/news-svgrepo-com.svg" alt="HomePage">
+                        <p>Bài viết</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./pictures/home-1-svgrepo-com.svg" alt="HomePage">
+                        <p>Liên hệ</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <main>
+            <div class="slideshow">
+                <div class="name">
+                    <h2>F8 trên Facebook</h2>
+                    <p>F8 được nhắc nhở ở mọi nơi, ở đâu có việc làm
+                        ở đó có f8
+                    </p>
+                </div>
+                <div class="more">
+                    <a href="#!">XEM THÊM</a>
+                </div>
+            </div>
+            <div class="name-course">
+                <h2>Khóa học nổi bật</h2>
+                <a href="#!">Xem lộ trình ></a>
+            </div>
+            <div class="course">
+
+            </div>
+
+        </main>
+        <footer>
+            <p>&copy; 2023 Công ty của bạn. Bản quyền thuộc về bạn.</p>
+        </footer>
+    </div>
 </body>
 </html>
