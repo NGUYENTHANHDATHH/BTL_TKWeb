@@ -6,37 +6,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
     <link rel="shortcut icon" href="./pictures/f8-logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="../main.css">
     <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 />
 
 </head>
+
 <body>
+    <div class="BG-color"></div>
+    <div class="Popup">
+        <div class="Login-popup">
+            <div class="login-content">
+            <span class="btn-close">&times;</span>
+            <header>
+                <img src="./pictures/f8-logo.svg" alt="">
+                <h2>Đăng nhập vào f8</h2>
+            </header>
+            <main>
+                <div>
+                    <p>Mỗi người nên sử dụng riêng một tài khoản, tài khoản nhiều người sử dụng chung sẽ bị khóa</p>
+                </div>
+                <div class="login-option">
+                    <ul>
+                        <li>
+                            <img src="./pictures/homepage/google-brands-solid.svg" alt="">
+                            <a href="https://accounts.google.com/signin">Sử dụng tài khoản google</a>
+                        </li>
+                        <li>
+                            <img src="./pictures/homepage/facebook-brands.svg" alt="">
+                            <a href="https://www.facebook.com/login.php" target="_blank">Sử dụng tài khoản facebook</a>
+                        </li>
+                        <li>
+                            <img src="./pictures/homepage/github-brands.svg" alt="">
+                            <a href="https://github.com/">Sử dụng tài khoản github</a>
+                        </li>
+                    </ul>
+                    <p style="color: black; font-size: 12px;">Việc bạn sử dụng trang web này đồng nghĩa với việc bạn đã đồng ý với diều khoản sử dụng của chúng tôi</p>
+                </div>
+            </main>
+        </div>
+            <div class="login-image">
+                <img src="./pictures/homepage/pexels-olia-danilevich-4974922.jpg" alt="Ảnh đẹp">
+                <div class="quote-text">"Learning to code is learning to create and innovate."</div>
+            </div>
+        </div>   
+    </div> 
+    <div class="BG-color"></div>
+    <div class="Popup" id="Popup-sign">
+        <div class="Login-popup">
+            <div class="login-content">
+            <span class="btn-close" id="btn-close">&times;</span>
+            <header>
+                <img src="./pictures/f8-logo.svg" alt="">
+                <h2>Đăng ký tài khoản f8</h2>
+            </header>
+            <main>
+                <div>
+                    <p>Mỗi người nên sử dụng riêng một tài khoản, tài khoản nhiều người sử dụng chung sẽ bị khóa</p>
+                </div>
+                <div class="login-option">
+                    <ul>
+                        <li>
+                            <img src="./pictures/homepage/google-brands-solid.svg" alt="">
+                            <a href="https://accounts.google.com/signin">Sử dụng tài khoản google</a>
+                        </li>
+                        <li>
+                            <img src="./pictures/homepage/facebook-brands.svg" alt="">
+                            <a href="https://www.facebook.com/login.php" target="_blank">Sử dụng tài khoản facebook</a>
+                        </li>
+                        <li>
+                            <img src="./pictures/homepage/github-brands.svg" alt="">
+                            <a href="https://github.com/">Sử dụng tài khoản github</a>
+                        </li>
+                    </ul>
+                    <p style="color: black; font-size: 12px;">Việc bạn sử dụng trang web này đồng nghĩa với việc bạn đã đồng ý với diều khoản sử dụng của chúng tôi</p>
+                </div>
+            </main>
+        </div>
+            <div class="login-image">
+                <img src="../pictures/homepage/pexels-olia-danilevich-4974922.jpg" alt="Ảnh đẹp">
+                <div class="quote-text">"Learning to code is learning to create and innovate."</div>
+            </div>
+        </div>   
+    </div> 
     <div class="container">
         <header>
             <div class="logo">
-                <img src="./pictures/f8-logo.svg" alt="Logo" class="logo">
-                <button class="quaylaitubaiviet" onclick="window.history.back();">◀ Quay Lại</button>
-                <p><strong></strong></p>
+                <a href="/main.html">
+                    <img src="../pictures/f8-logo.svg" alt="Logo" class="logo">
+                    <p><strong>Học lập trình để đi làm</strong></p>
+                </a>
             </div>
             <div class="search">
                 <input type="text" placeholder="Tìm kiếm...">
             </div>
             <div class="account">
                 <div class="signup">
-                    <button class="btn-signup">Đăng ký</button>
+                    <button class="btn-signup" id="open-popup-sign">Đăng ký</button>
                 </div>
                 <div class="login">
-                    <button class="btn-login">Đăng nhập</button>
+                    <button class="btn-login" id="open-popup-btn">Đăng nhập</button>
                 </div>
             </div>
         </header>
         <div class="sidebar">
             <div class="logo-sidebar">
                 <div class="homepage">
-                    <a href="#">
+                    <a href="/main.html">
                         <img src="./pictures/home-1-svgrepo-com.svg" alt="HomePage">
                         <p>Trang chủ</p>
                     </a>
@@ -53,6 +131,14 @@
                         <p>Bài viết</p>
                     </a>
                 </div>
+                <div class="news">
+                    <a href="./cart.html">
+                        <img src="./pictures/homepage/cart-shopping-solid.svg" alt="HomePage">
+                        <p>Giỏ hàng</p>
+                    </a>
+                </div>
+            </div>
+            <div class="more-sidebar">
                 <div class="info">
                     <a href="#">
                         <img src="./pictures/home-1-svgrepo-com.svg" alt="HomePage">
@@ -64,14 +150,28 @@
         <main>
             <div class="baiviet-full">
                 <div class="tacgia">
-                  <div style="display: flex; align-items: center; gap: 12px;">
-                    <img src="https://files.fullstack.edu.vn/f8-prod/user_avatars/13286/65fa6676d4644.jpg" alt="Ảnh tác giả" style="width: 40px; height: 40px; border-radius: 50%;" />
-                    <div>
-                      <strong>Trọng Nam Đoàn <span style="color: blue;">✔️</span></strong>
-                      <p style="font-size: 14px; color: #888;">6 tháng trước · 5 phút đọc</p>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <img src="https://files.fullstack.edu.vn/f8-prod/user_avatars/13286/65fa6676d4644.jpg" alt="Ảnh tác giả" style="width: 40px; height: 40px; border-radius: 50%;" />
+                      <div>
+                        <strong>Trọng Nam Đoàn<span style="color: blue;">✔️</span></strong>
+                        <p style="font-size: 14px; color: #888;"> 7 tháng trước · 5 phút đọc</p>
+                      </div>
+                    </div>
+                    <!-- Thêm nút Like và Share bên phải -->
+                    <div class="actions">
+                      <button class="like-button default" onclick="toggleLike(event)">
+                        <i class="fas fa-thumbs-up"></i>
+                      </button>
+                      <div class="Share">
+                        <button class="Sharebutton" onclick="boxclick()">&#8943;</button>
+                        <div class="Sharebox" id="box">
+                          <a href="#" target="_blank">Chia sẻ lên Facebook</a>
+                          <a href="#" target="_blank">Chia sẻ lên Twitter</a>
+                          <a href="#" target="_blank">Chia sẻ lên Zalo</a>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
               
                 
                 <div class="noidungbaiviet">
@@ -123,6 +223,91 @@
             </div>
   </div>
           </main>
+          <script>
+            // Hàm lọc bài viết theo chuyên mục (ReactJS, JavaScript, Front-end)
+            function locTheoChuyenMuc(tag) {
+                const baiVietLoc = document.querySelectorAll('.tungbaiviet');
+                baiVietLoc.forEach(baiViet => {
+                    const category = baiViet.getAttribute('data-category');
+                    if (category === tag || tag === 'Tất cả') {
+                        baiViet.style.display = 'block'; // Hiển thị bài viết
+                    } else {
+                        baiViet.style.display = 'none'; // Ẩn bài viết không thuộc tag
+                    }
+                });
+            }
+    
+            // Hàm hiển thị tất cả bài viết
+            function hienThiTatCaBaiViet() {
+                const baiVietLoc = document.querySelectorAll('.tungbaiviet');
+                baiVietLoc.forEach(baiViet => {
+                    baiViet.style.display = 'block'; // Hiển thị tất cả bài viết
+                });
+            }
+                    function boxclick() {
+                const hop = document.getElementById("box");
+                hop.style.display = hop.style.display === "block" ? "none" : "block";
+              }
+    
+              // Tự động ẩn khi click ra ngoài
+             window.addEventListener("click", function(suKien) {
+               const hop = document.getElementById("box");
+                const nut = document.querySelector(".Sharebutton");
+                if (!hop.contains(suKien.target) && !nut.contains(suKien.target)) {
+                  hop.style.display = "none";
+                }
+             });
+    
+                
+                  function toggleLike(event) {
+                  const likeButton = event.target.closest('.like-button'); // Lấy phần tử like-button gần nhất
+    
+                  // Kiểm tra trạng thái của nút "Like"
+                  if (likeButton.classList.contains("default")) {
+                      likeButton.classList.remove("default");
+                      likeButton.classList.add("liked");
+                  } else {
+                      likeButton.classList.remove("liked");
+                      likeButton.classList.add("default");
+                  }
+              }
+    
+                               let trangHienTai = 1;  // Trang hiện tại
+                     const soBaiVietMoiTrang = 4;  // Số bài viết hiển thị trên mỗi trang
+                     const danhSachBaiViet = document.querySelectorAll('.tungbaiviet');  // Lấy tất cả các bài viết
+    
+                     // Hàm hiển thị các bài viết trên trang hiện tại
+                     function hienThiBaiViet() {
+                         const viTriBatDau = (trangHienTai - 1) * soBaiVietMoiTrang;
+                         const viTriKetThuc = trangHienTai * soBaiVietMoiTrang;
+        
+                         // Ẩn tất cả bài viết
+                         danhSachBaiViet.forEach((baiViet, index) => {
+                             if (index >= viTriBatDau && index < viTriKetThuc) {
+                                                  baiViet.style.display = 'block';  // Hiển thị bài viết trong khoảng
+                             } else {
+                                 baiViet.style.display = 'none';  // Ẩn các bài viết không thuộc trang hiện tại
+                             }
+                         });
+    
+                         // Cập nhật số trang hiện tại
+                         document.querySelector('.so-trang').textContent = `Trang ${trangHienTai}`;
+                     }
+    
+                     // Hàm thay đổi trang
+                     function thayDoiTrang(huong) {
+                         const tongSoTrang = Math.ceil(danhSachBaiViet.length / soBaiVietMoiTrang);
+    
+                         // Thay đổi trang hiện tại theo hướng
+                         if (trangHienTai + huong > 0 && trangHienTai + huong <= tongSoTrang) {
+                             trangHienTai += huong;
+                             hienThiBaiViet();
+                         }
+                     }
+    
+                     // Hiển thị bài viết khi trang được tải
+                     hienThiBaiViet();
+            </script>
         <footer>
             <div class="footer-container">
                 <div class="footer-column">
@@ -184,16 +369,7 @@
                     <a href="#"><img src="/pictures/tiktok-svgrepo-com.svg" alt="TikTok"></a>
                 </div>
             </div>
-          </footer>
+        </footer>
     </div>
-    <script>
-        const heartBtn = document.getElementById('heartBtn');
-const heartIcon = document.getElementById('heartIcon');
-
-heartBtn.addEventListener('click', () => {
-  heartIcon.classList.toggle('fa-solid');
-  heartIcon.classList.toggle('fa-regular');
-    });
-    </script>
 </body>
 </html>
