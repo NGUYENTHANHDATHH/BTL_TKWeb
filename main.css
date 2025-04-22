@@ -844,7 +844,6 @@ footer img{
     font-size: 14px;
     color: var(--color-border);
   }
-<<<<<<< HEAD
 /* Tao popup dang nhap */
 .Popup {
   width: 100%;
@@ -960,7 +959,7 @@ footer img{
   font-family: 'Georgia', serif;
   justify-content: center;
   align-items: center;
-=======
+  }
 /* responsive */
 @media screen and (max-width: 1000px) {
     .container {
@@ -1025,5 +1024,4 @@ footer img{
     .more-sidebar{
         display: block;
     }
->>>>>>> b82b82a40d29f682d813f08206c18d99ea32b42c
-}
+  }

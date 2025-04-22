@@ -24,3 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
         popup.classList.remove("active");
     });
 });
+function addToCart(name, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Kiểm tra nếu sản phẩm đã có thì tăng số lượng
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ name, price, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Đã thêm vào giỏ hàng!');
+  }
