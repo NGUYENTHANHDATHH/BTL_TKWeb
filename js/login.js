@@ -5,10 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     openBtn.addEventListener("click", function () {
         popup.classList.add("active");
+        document.querySelector('.BG-color').classList.add('active');
     });
 
     closeBtn.addEventListener("click", function () {
         popup.classList.remove("active");
+        document.querySelector('.BG-color').classList.remove('active');
     });
 });
 document.addEventListener("DOMContentLoaded", function () {
@@ -18,10 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     openBtn.addEventListener("click", function () {
         popup.classList.add("active");
+        document.querySelector('.BG-color').classList.add('active');
     });
 
     closeBtn.addEventListener("click", function () {
         popup.classList.remove("active");
+        document.querySelector('.BG-color').classList.remove('active');
     });
 });
 function addToCart(name, price) {
