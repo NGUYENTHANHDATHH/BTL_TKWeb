@@ -881,7 +881,7 @@ footer img{
   align-items: center;
 
   opacity: 0;
-  transform: scale(0.95);
+  transform: scale(0.2);
   visibility: hidden;
   pointer-events: none;
 
