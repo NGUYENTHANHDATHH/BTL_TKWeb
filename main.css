@@ -254,7 +254,7 @@ body {
 .container{
     display: grid;
     grid-template-columns: 10% 60% 30%;
-    grid-template-rows: 70px 1fr 400px;
+    grid-template-rows: 50px auto auto;
     grid-template-areas: 
         "header header header"
         "sidebar main main"
@@ -273,23 +273,25 @@ header{
     z-index: 10;
 }
 .logo{
-    display: flex;
     flex-grow: 3;
     justify-content: flex-start;
     align-items: center;
 }
-.logo img{
+.logo a{
+    text-decoration: none;
     display: flex;
-    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-start;
+}
+.logo img{
     width: 40px;
     height: 40px;
     border-radius: 30%;
     margin: 0 10px;
 }
 .logo p{
-    display: flex;
-    flex-grow: 4;
     font-size: 20px;
+    text-decoration: none;
     font-weight: bold;
     margin-left: 10px;
     color: #000000;
@@ -302,7 +304,7 @@ header{
     justify-content: center;
 }
 .search input[type="text"] {
-    width: 50%;
+    width: 500px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 999px;
@@ -340,7 +342,7 @@ header{
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     text-align: center;
 }
 .logo-sidebar{
@@ -352,7 +354,7 @@ header{
     position: sticky;
     top: 100px;
 }
-.logo-sidebar div{
+.logo-sidebar div, .more-sidebar div{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -360,19 +362,29 @@ header{
     height: 80px;
     margin: 10px 0;
     border-radius: 20px;
+}
+.logo-sidebar div:visited{
     background-color: white;
 }
-.logo-sidebar a{
+.logo-sidebar div:hover{
+    background-color: white;
+    transition: all 0.5s ease;
+}
+.logo-sidebar a, .more-sidebar a{
     font-style:normal;
     color: #000000;
     text-decoration: none;
     font-size: 12px;
     margin: 10px 0;
 }
-.logo-sidebar img{
+.logo-sidebar img, .more-sidebar img{
     width: 30px;
     height: 30px;
 }
+.more-sidebar{
+    display: none;
+}
+
 main {
     grid-area: main;
     display: block;
@@ -518,6 +530,241 @@ main {
   .heart-btn .fa-regular {
     color: gray;
   }
+
+/* Sản phẩm */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.infor {
+  flex: 1;
+  max-width: 50%;
+}
+
+.infor h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.infor p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.infor h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+}
+
+.infor ul {
+  list-style: none;
+  padding: 0;
+}
+
+.infor ul li {
+  position: relative;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  padding-left: 25px;
+}
+
+.infor ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #ff4500;
+  font-weight: bold;
+}
+
+
+
+
+/* Mục lục */
+.accordion {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 5px;
+}
+
+.accordion:hover {
+  background-color: #d3d3d3;
+}
+
+.icon {
+  font-weight: bold;
+  margin-right: 8px;
+  transition: transform 0.3s;
+  color: #ff4500;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.content {
+  display: none;
+  padding: 10px 16px 10px 30px;
+  border-left: 2px solid #ccc;
+  background-color: #fafafa;
+}
+
+.accordion.open + .content {
+  display: block;
+}
+.content ul {
+list-style-type: none;
+padding-left: 0;
+}
+
+.content li {
+margin-bottom: 8px;
+}
+
+.content a {
+
+text-decoration: none;
+color: #3366cc;
+transition: color 0.2s;
+}
+
+.content ul li::before {
+  content: none;
+  position: absolute;
+}
+
+.content a:hover {
+color: #003399;
+}
+
+/* Hết mục lục */
+
+.product {
+  flex: 1;
+  max-width: 50%;
+  text-align: center;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  width: 100%; 
+  max-width: 400px; 
+  margin: 0 auto; 
+}
+
+.video-container video {
+  width: 100%;
+  height: auto; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff4500;
+  margin: 15px 0;
+}
+
+.register-btn {
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  background-color: #4682b4;
+}
+
+.add-to-cart {
+  background-color: #ff4500;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: #d23f09;
+}
+
+.product-details {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto 0;     
+  display: inline-block;    
+  text-align: left;         
+}
+
+.product-details li {
+  display: flex;
+  align-items: center;      
+  margin-bottom: 10px;      
+}
+
+.product-details li svg {
+  margin-right: 8px;        
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+  .main-content {
+      flex-direction: column;
+  }
+  .infor, .product {
+      max-width: 100%;
+  }
+}
+/* Hết sản phẩm */
+.name-course{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+.name-course h2{
+  display: flex;
+  flex-grow: 4;
+  font-size: 25px;
+  font-weight: bold;
+  color: #000000;
+}
+.name-course a{
+  display: flex;
+  flex-grow: 1;
+  font-size: 20px;
+  color: var(--color-secondary);
+}
+
+
 /* start footer */
 footer {
     grid-area: footer;
@@ -597,6 +844,7 @@ footer img{
     font-size: 14px;
     color: var(--color-border);
   }
+<<<<<<< HEAD
 /* Tao popup dang nhap */
 .Popup {
   width: 100%;
@@ -712,4 +960,70 @@ footer img{
   font-family: 'Georgia', serif;
   justify-content: center;
   align-items: center;
+=======
+/* responsive */
+@media screen and (max-width: 1000px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px auto auto auto;
+        grid-template-areas: 
+            "header"
+            "main"
+            "footer"
+            "sidebar";
+    }
+    .search input[type="text"] {
+        width: 100%;
+    }
+    header {
+        width: 100%;
+        height: 10%;
+    }
+    .logo{
+        flex-grow: 1;
+    }
+    .logo p{
+        display: none;
+    }
+    .search{
+        flex-grow: 8;
+    }
+    .account{
+        flex-grow: 1;
+    }
+    .account button.btn-signup{
+        display: none;
+    }
+    .logo-sidebar {
+        position: static;
+        margin: 20px 0;
+    }
+    .course-item {
+        width: 45%;
+    }
+    .sidebar{
+        position: fixed;
+        flex-direction: row;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        border: solid 1px #ccc;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f8f8;
+        z-index: 1000; 
+    }
+    .logo-sidebar{
+        flex-direction: row;
+        flex-grow: 5;
+    }
+    .logo-sidebar div{
+        margin: 0 10px;
+    }
+    
+    .more-sidebar{
+        display: block;
+    }
+>>>>>>> b82b82a40d29f682d813f08206c18d99ea32b42c
 }
