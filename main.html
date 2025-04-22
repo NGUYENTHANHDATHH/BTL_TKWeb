@@ -6,14 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
     <link rel="shortcut icon" href="./pictures/f8-logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="./main.css">
     <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 />
-
+<script src="./js/login.js"></script>
 </head>
+
 <body>
+    <div class="Popup">
+        <div class="Login-popup">
+            <div class="login-content">
+            <span class="btn-close">&times;</span>
+            <header>
+                <img src="./pictures/f8-logo.svg" alt="">
+                <h2>Đăng nhập vào f8</h2>
+            </header>
+            <main>
+                <div>
+                    <p>Mỗi người nên sử dụng riêng một tài khoản, tài khoản nhiều người sử dụng chung sẽ bị khóa</p>
+                </div>
+                <div class="login-option">
+                    <ul>
+                        <li>
+                            <img src="./pictures/homepage/google-brands-solid.svg" alt="">
+                            <a href="https://accounts.google.com/signin">Sử dụng tài khoản google</a>
+                        </li>
+                        <li>
+                            <img src="./pictures/homepage/facebook-brands.svg" alt="">
+                            <a href="https://www.facebook.com/login.php" target="_blank">Sử dụng tài khoản facebook</a>
+                        </li>
+                        <li>
+                            <img src="./pictures/homepage/github-brands.svg" alt="">
+                            <a href="#">Sử dụng tài khoản github</a>
+                        </li>
+                    </ul>
+                    <p style="color: black; font-size: 12px;">Việc bạn sử dụng trang web này đồng nghĩa với việc bạn đã đồng ý với diều khoản sử dụng của chúng tôi</p>
+                </div>
+            </main>
+        </div>
+            <div class="login-image">
+                <img src="./pictures/homepage/pexels-olia-danilevich-4974922.jpg" alt="Ảnh đẹp">
+                <div class="quote-text">"Learning to code is learning to create and innovate."</div>
+            </div>
+          </div>   
+    </div> 
+    <div class="Popup" id="Popup-sign">
+        <div class="Login-popup">
+            <div class="login-content">
+            <span class="btn-close" id="btn-close">&times;</span>
+            <header>
+                <img src="./pictures/f8-logo.svg" alt="">
+                <h2>Đăng ký tài khoản f8</h2>
+            </header>
+            <main>
+                <div>
+                    <p>Mỗi người nên sử dụng riêng một tài khoản, tài khoản nhiều người sử dụng chung sẽ bị khóa</p>
+                </div>
+                <div class="login-option">
+                    <ul>
+                        <li>
+                            <img src="./pictures/homepage/google-brands-solid.svg" alt="">
+                            <a href="#">Đăng ký tài khoản google</a>
+                        </li>
+                        <li>
+                            <img src="./pictures/homepage/facebook-brands.svg" alt="">
+                            <a href="#">Đăng ký tài khoản facebook</a>
+                        </li>
+                        <li>
+                            <img src="./pictures/homepage/github-brands.svg" alt="">
+                            <a href="#">Đăng ký tài khoản github</a>
+                        </li>
+                    </ul>
+                    <p style="color: black; font-size: 12px;">Việc bạn sử dụng trang web này đồng nghĩa với việc bạn đã đồng ý với diều khoản sử dụng của chúng tôi</p>
+                </div>
+            </main>
+        </div>
+            <div class="login-image">
+                <img src="./pictures/homepage/pexels-olia-danilevich-4974922.jpg" alt="Ảnh đẹp">
+                <div class="quote-text">"Learning to code is learning to create and innovate."</div>
+            </div>
+          </div>   
+    </div> 
     <div class="container">
         <header>
             <div class="logo">
@@ -25,10 +100,10 @@
             </div>
             <div class="account">
                 <div class="signup">
-                    <button class="btn-signup">Đăng ký</button>
+                    <button class="btn-signup" id="open-popup-sign">Đăng ký</button>
                 </div>
                 <div class="login">
-                    <button class="btn-login">Đăng nhập</button>
+                    <button class="btn-login" id="open-popup-btn">Đăng nhập</button>
                 </div>
             </div>
         </header>
