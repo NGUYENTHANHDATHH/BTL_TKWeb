@@ -227,7 +227,7 @@ class UserAuth {
                             <span>Email: ${this.currentUser.email}</span>
                         </div>
                         <ul>
-                            <li><a href="#" class="courses-link">Giỏ hàng của tôi</a></li>
+                            <li><a href="/cart.html" class="courses-link">Giỏ hàng của tôi</a></li>
                             <li><a href="#" class="logout-link">Đăng xuất</a></li>
                         </ul>
                     </div>
