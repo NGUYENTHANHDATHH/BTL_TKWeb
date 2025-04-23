@@ -157,6 +157,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
               </div>
       
               <div class="baivietvaquangcao">  <!-- chứa từng bài viết và quảng cáo -->
+
+
                   <div class="cacbaiviet"> <!-- các bài viết -->
 
                       <div class="tungbaiviet" data-category="ReactJS">
@@ -173,8 +175,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
                               </button>
                                 
                               <div class="Share">
-                                <button class="Sharebutton" onclick="boxclick()">&#8943;</button>
-                                <div class="Sharebox" id="box">
+                                <button class="Sharebutton" onclick="boxclick(event)">&#8943;</button>
+                                <div class="Sharebox">
                                   <a href="#" target="_blank">Chia sẻ lên Facebook</a>
                                   <a href="#" target="_blank">Chia sẻ lên Twitter</a>
                                   <a href="#" target="_blank">Chia sẻ lên Zalo</a>
@@ -210,8 +212,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
                               <button class="like-button default" onclick="toggleLike(event)">
                                 <i class="fas fa-thumbs-up"></i></button>
                               <div class="Share">
-                                <button class="Sharebutton" onclick="boxclick()">&#8943;</button>
-                                <div class="Sharebox" id="box">
+                                <button class="Sharebutton" onclick="boxclick(event)">&#8943;</button>
+                                <div class="Sharebox">
                                   <a href="#" target="_blank">Chia sẻ lên Facebook</a>
                                   <a href="#" target="_blank">Chia sẻ lên Twitter</a>
                                   <a href="#" target="_blank">Chia sẻ lên Zalo</a>
@@ -246,8 +248,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
                               <button class="like-button default" onclick="toggleLike(event)">
                                 <i class="fas fa-thumbs-up"></i></button>
                               <div class="Share">
-                                <button class="Sharebutton" onclick="boxclick()">&#8943;</button>
-                                <div class="Sharebox" id="box">
+                                <button class="Sharebutton" onclick="boxclick(event)">&#8943;</button>
+                                <div class="Sharebox">
                                   <a href="#" target="_blank">Chia sẻ lên Facebook</a>
                                   <a href="#" target="_blank">Chia sẻ lên Twitter</a>
                                   <a href="#" target="_blank">Chia sẻ lên Zalo</a>
@@ -281,8 +283,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
                               <button class="like-button default" onclick="toggleLike(event)">
                                 <i class="fas fa-thumbs-up"></i></button>
                               <div class="Share">
-                                <button class="Sharebutton" onclick="boxclick()">&#8943;</button>
-                                <div class="Sharebox" id="box">
+                                <button class="Sharebutton" onclick="boxclick(event)">&#8943;</button>
+                                <div class="Sharebox">
                                   <a href="#" target="_blank">Chia sẻ lên Facebook</a>
                                   <a href="#" target="_blank">Chia sẻ lên Twitter</a>
                                   <a href="#" target="_blank">Chia sẻ lên Zalo</a>
@@ -318,8 +320,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
                                 <button class="like-button default" onclick="toggleLike(event)">
                                   <i class="fas fa-thumbs-up"></i></button>
                                 <div class="Share">
-                                  <button class="Sharebutton" onclick="boxclick()">&#8943;</button>
-                                  <div class="Sharebox" id="box">
+                                  <button class="Sharebutton" onclick="boxclick(event)">&#8943;</button>
+                                  <div class="Sharebox">
                                     <a href="#" target="_blank">Chia sẻ lên Facebook</a>
                                     <a href="#" target="_blank">Chia sẻ lên Twitter</a>
                                     <a href="#" target="_blank">Chia sẻ lên Zalo</a>
@@ -393,10 +395,20 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
                 baiViet.style.display = 'block'; // Hiển thị tất cả bài viết
             });
         }
-                function boxclick() {
-            const hop = document.getElementById("box");
-            hop.style.display = hop.style.display === "block" ? "none" : "block";
-          }
+                function boxclick(event) {
+                     const btn = event.currentTarget;
+                     const shareBox = btn.nextElementSibling; // Lấy box liền sau nút
+                     const allBoxes = document.querySelectorAll('.Sharebox');
+
+                     allBoxes.forEach(box => {
+                         if (box !== shareBox) {
+                             box.style.display = "none"; // Ẩn các box khác
+                         }
+                     });
+
+    // Toggle box gần nút
+    shareBox.style.display = shareBox.style.display === "block" ? "none" : "block";
+}                 
 
           // Tự động ẩn khi click ra ngoài
          window.addEventListener("click", function(suKien) {

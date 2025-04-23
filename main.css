@@ -1,5 +1,7 @@
-/* Bắt đầu Css của phần Blog------------------------------------- */
-.tieude{
+
+  /* Bắt đầu Css của phần Blog------------------------------------- */
+
+  .tieude{
     margin-bottom:  2%;
     
   }
@@ -12,7 +14,7 @@
     color: #333;
     font-size: 16px;
   }
-  .noidungbaiviet img {
+  noidungbaiviet img {
     display:block;
     margin: 0 auto;
     width: 80%;
@@ -23,13 +25,13 @@
   }
   .anhvachuthich{
     text-align: center;
-     margin: 24px 0;
+     margin: 24px 0;"
   }
   .anhvachuthich p{
     font-style: italic; 
     font-size: 14px; 
     color: #666; 
-    margin-top: 8px;
+    margin-top: 8px;"
   }
   .anhvachuthich img{
     display:block;
@@ -86,9 +88,20 @@
     margin-top: 25px;
   }
   .tacgia{
-    margin-bottom: 2%;
-    display: flex; align-items: center;
+    margin-bottom: 1%;
+    display: flex; 
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
   } 
+  
+  .tenvaavatar{
+    margin-bottom: 2%;
+    display: flex; 
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
   .tacgia img{
     width: 25px;
     height: 25px;
@@ -137,18 +150,22 @@
     gap: 12px;
     align-items: center;
     font-size: 14px;
-    color: #666;
+    color: #2a2a2a;
     margin-bottom:0px;
   }
   .tag {
-    background: #f0f0f0;
-    padding: 6px 10px;
+    background: #e3e3e3;
+    padding: 5px 10px;
     border-radius: 12px;
+    border: none;
     font-size: 14px;
-    color: #333;
+    color: #464646;
     font-weight: 500;
+    margin-bottom: 2px;
+  
     
   }
+  
   .quaylaitubaiviet{
     padding: 10px 20px;
     font-size: 16px;
@@ -167,8 +184,8 @@
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   }
-  /*trên điện thoại */
-  @media (max-width: 700px) {
+  
+  @media (max-width: 1000px) {
     .chuvaanh {
       flex-direction: column;
     }
@@ -231,32 +248,153 @@
     color: #f05a28;
     text-decoration: none;
   }
+  .Sharebutton {
+    padding: 10px 20px;
+    background-color: rgba(0,0,0,0);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
   
+  .Sharebox {
+  display: none;  
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+  
+  .Sharebox a {
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .Sharebox a:hover {
+    color: #0b3f77;
+  }
+  
+  .Share {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .like-button {
+    font-size: 22px;
+    font-weight: 600;
+  
+    cursor: pointerr;
+    border: var(--like-border-width) solid var(--like-border-color);
+    background-color: var(--like-button-bg);
+    color: var(--like-text-color);
+  
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  /* Nút "Like" chưa nhấn */
+  .default {
+    color: var(--like-text-color);
+    border-color: var(--like-border-color);
+  }
+  
+  /* Nút "Like" khi nhấn */
+  .liked {
+    color: var(--like-text-color-hover);
+    background-color: var(--like-fill-color); /* Tô màu khi nhấn */
+    border-color: var(--like-fill-color);
+  }
+  
+  /* Hiệu ứng khi hover */
+  .like-button:hover {
+    background-color: var(--like-fill-color);
+    color: var(--like-text-color-hover);
+  }
+  
+  /* Container cho phân trang */
+  .phan-trang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  }
+  
+  /* Các nút phân trang */
+  .phan-trang button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #ce7d1b;
+  cursor: pointer;
+  margin: 0 4px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Màu sắc khi hover */
+  .phan-trang button:hover {
+  
+  color: rgb(5, 5, 4);
+  
+  }
+  
+  /* Nút trang hiện tại */
+  .phan-trang button.active {
+  color: white;
+  
+  font-weight: bold;
+  }
+  
+  /* Nút trang "Trang trước" và "Trang sau" */
+  .phan-trang .trang-truoc,
+  .phan-trang .trang-sau {
+  font-size: 18px;
+  font-weight: bold;
+  }
+  
+  /* Thêm hiệu ứng chuyển động khi nhấn */
+  .phan-trang button:active {
+  transform: scale(0.95);
+  }
+  
+  /* Điều chỉnh khoảng cách giữa các nút */
+  .phan-trang button + button {
+  margin-left: 5px;
+  }
   /* ket thuc ccss phan Blog------------------------------------- */
-  
+
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 :root {
-    --color-primary: linear-gradient(to bottom right, #FFA500, #FF4500);
-    --color-secondary: #ff4500;
-    --color-text: #000000;
-    --color-background: #f5f5f5;
-    --color-border: #ccc;
-    --color-enroll: #4fccf2;
-    /* root cua nut LIKE*/ 
-    --like-bg-color: transparent;
-    --like-border-width: 2px; 
-    --like-text-color: #c6c8cb; 
-    --like-text-color-hover: #0c88c2; 
-  /* -------------------------------- */
+  --color-primary: linear-gradient(to bottom right, #FFA500, #FF4500);
+  --color-secondary: #ff4500;
+  --color-text: #000000;
+  --color-background: #f5f5f5;
+  --color-border: #ccc;
+  --color-enroll: #4fccf2;
+  /* root cua nut LIKE BLOG */ 
+  --like-bg-color: transparent;
+  --like-border-width: 2px; 
+  --like-text-color: #c6c8cb; 
+  --like-text-color-hover: #0c88c2; 
+/* -------------------------------- */
 }
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
 }
+
 .container{
     display: grid;
     grid-template-columns: 10% 60% 30%;
@@ -273,6 +411,8 @@ header{
     border-bottom: solid 1px #ccc;
     display: flex;
     align-items: center;
+    position: fixed;
+    top: 0;
     flex-wrap: nowrap;
     justify-content: center;
     background-color: #f5f5f5;
@@ -397,33 +537,76 @@ main {
     padding: 20px;
     margin: 20px;
 }
-.slideshow{
+.slider {
+  padding: 20px;
+  width: 100%;
+  height: 250px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(to right, #5daee3, #2b9dce);
+  color: white;
+  }
+
+  .slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    margin: 0 10px;
+  min-width: 100%;
+  box-sizing: border-box;
+  }
+  .slide button {
+    padding: 10px 20px;
+    margin-top: 30px;
+  background: transparent;
+  border: solid 1px white;
+  border-radius: 20px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  }
+  .nut{
     display: flex;
-    width: 100%;
-    height: 200px;
-    border-radius: 20px;
-    background: linear-gradient(to right, #4fccf2, #3289e0);
-    margin: 0;
-    flex-direction: column;
-    justify-content: center;
-}
-.slideshow div{
-    margin: 30px;
-    color: #ffffff;
-}
-.slideshow p{
-    color: #ffffff;
-    margin: 10px 0;
-}
-.slideshow a{
-    text-decoration: none;
-    padding: 5px 10px;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: bold;
-    border: solid 3px #ffffff;
-    border-radius: 20px;
-}
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .prev, .next {
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 999px;
+  padding: 10px;
+  cursor: pointer;
+  }
+
+  .prev { left: 10px; }
+  .next { right: 10px; }
+
+  .dots {
+  text-align: center;
+  padding: 10px;
+  }
+
+  .dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  }
+
+  .dots span.active {
+  background: #555;
+  }
+
 .name-course{
     display: flex;
     justify-content: space-between;
@@ -740,15 +923,7 @@ color: #003399;
   margin-right: 8px;        
 }
 
-/* Responsive cho màn hình nhỏ */
-@media (max-width: 768px) {
-  .main-content {
-      flex-direction: column;
-  }
-  .infor, .product {
-      max-width: 100%;
-  }
-}
+
 /* Hết sản phẩm */
 .name-course{
   display: flex;
@@ -933,11 +1108,13 @@ footer img{
   overflow: hidden;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255);
 }
 .login-option li{
   display: flex;
-  margin: 40px;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
   padding: 15px;
   list-style: none;
   background-color: #fcfafa;
@@ -950,7 +1127,8 @@ footer img{
   background-color: #dedbdb;
 }
 .login-option li img{
-  width: 15px;
+  width: 20px;
+  height: 20px;
 }
 .login-option li a{
   margin: 0 0 0 10px;
@@ -1042,16 +1220,37 @@ footer img{
         background-color: #f8f8f8;
         z-index: 1000; 
     }
-    .logo-sidebar{
-        flex-direction: row;
-        flex-grow: 5;
+      .logo-sidebar{
+          flex-direction: row;
+          flex-grow: 5;
+      }
+      .logo-sidebar div{
+          margin: 0 10px;
+      }  
+      .more-sidebar{
+          display: block;
+      }
+      .main-content {
+        flex-direction: column;
     }
-    .logo-sidebar div{
-        margin: 0 10px;
+    .infor, .product {
+        max-width: 100%;
     }
-    
-    .more-sidebar{
-        display: block;
+    .baivietvaquangcao{
+      flex-direction: column;
+      text-align: center;
+    }
+    .quangcao {
+      margin: 0 auto;        
+      text-align: center;  
+      width: 90%;
+      max-width: 700px;
+    }
+    .chuvaanh {
+      flex-direction: column;
+    }
+    .phananh {
+      width: 0px;
     }
   }
 
@@ -1425,3 +1624,166 @@ transform: scale(0.95);
 margin-left: 5px;
 }
 /* ket thuc ccss phan Blog------------------------------------- */
+
+/* User Profile Styles */
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #666;
+}
+
+.user-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 200px;
+    display: none;
+    z-index: 1000;
+}
+
+.user-profile:hover .user-menu {
+    display: block;
+}
+
+.user-info {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.user-info span {
+    display: block;
+    font-size: 14px;
+}
+
+.user-info span:first-child {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.user-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.user-menu li a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Form Toggle Styles */
+.form-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.toggle-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f0f0f0;
+    color: #666;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+}
+.user-avatar{
+  margin-right: 20px ;
+}
+
+/* Google Sign-In Button Styles */
+#google-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#google-btn iframe {
+    width: 100% !important;
+    height: 40px !important;
+}
+
+.login-option li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    padding: 15px;
+    list-style: none;
+    background-color: #fcfafa;
+    border: 1px solid #ccc;
+    border-radius: 36px;
+    height: auto;
+    text-align: center;
+}
+
+.login-option li img {
+    width: 20px;
+    height: 20px;
+}
