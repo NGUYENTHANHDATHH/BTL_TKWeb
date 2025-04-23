@@ -11,6 +11,11 @@ function toggleAccordion(element) {
     const icon = element.querySelector(".icon");
     icon.textContent = element.classList.contains("open") ? "–" : "+";
   }
+
+
+
+
+  
   document.querySelector('.register-btn').addEventListener('click', () => {
     window.open('https://example.com/register','_blank');
   });

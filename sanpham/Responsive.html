@@ -5,57 +5,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
-    <link rel="shortcut icon" href="./pictures/f8-logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/pictures/f8-logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <script src="/js/login.js"></script>
     <script src="/main.js"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <a href="/main.html">
-                    <img src="./pictures/f8-logo.svg" alt="Logo" class="logo">
-                    <p><strong>Học lập trình để đi làm</strong></p>
-                </a>
+    <div class="BG-color"></div>
+        <div class="Popup">
+            <div class="Login-popup">
+                <div class="login-content">
+                <span class="btn-close">&times;</span>
+                <header>
+                    <img src="/pictures/f8-logo.svg" alt="">
+                    <h2>Đăng nhập vào f8</h2>
+                </header>
+                <main>
+                    <div>
+                        <p>Mỗi người nên sử dụng riêng một tài khoản, tài khoản nhiều người sử dụng chung sẽ bị khóa</p>
+                    </div>
+                    <div class="login-option">
+                        <ul>
+                            <li>
+                                <img src="/pictures/homepage/google-brands-solid.svg" alt="">
+                                <a href="https://accounts.google.com/signin">Sử dụng tài khoản google</a>
+                            </li>
+                            <li>
+                                <img src="/pictures/homepage/facebook-brands.svg" alt="">
+                                <a href="https://www.facebook.com/login.php" target="_blank">Sử dụng tài khoản facebook</a>
+                            </li>
+                            <li>
+                                <img src="/pictures/homepage/github-brands.svg" alt="">
+                                <a href="https://github.com/">Sử dụng tài khoản github</a>
+                            </li>
+                        </ul>
+                        <p style="color: black; font-size: 12px;">Việc bạn sử dụng trang web này đồng nghĩa với việc bạn đã đồng ý với diều khoản sử dụng của chúng tôi</p>
+                    </div>
+                </main>
             </div>
-            <div class="search">
-                <input type="text" placeholder="Tìm kiếm...">
-            </div>
-            <div class="account">
-                <div class="signup">
-                    <button class="btn-signup">Đăng ký</button>
+                <div class="login-image">
+                    <img src="/pictures/homepage/pexels-olia-danilevich-4974922.jpg" alt="Ảnh đẹp">
+                    <div class="quote-text">"Learning to code is learning to create and innovate."</div>
                 </div>
-                <div class="login">
-                    <button class="btn-login">Đăng nhập</button>
-                </div>
+            </div>   
+        </div> 
+        <div class="BG-color"></div>
+        <div class="Popup" id="Popup-sign">
+            <div class="Login-popup">
+                <div class="login-content">
+                <span class="btn-close" id="btn-close">&times;</span>
+                <header>
+                    <img src="/pictures/f8-logo.svg" alt="">
+                    <h2>Đăng ký tài khoản f8</h2>
+                </header>
+                <main>
+                    <div>
+                        <p>Mỗi người nên sử dụng riêng một tài khoản, tài khoản nhiều người sử dụng chung sẽ bị khóa</p>
+                    </div>
+                    <div class="login-option">
+                        <ul>
+                            <li>
+                                <img src="/pictures/homepage/google-brands-solid.svg" alt="">
+                                <a href="https://accounts.google.com/signin">Sử dụng tài khoản google</a>
+                            </li>
+                            <li>
+                                <img src="/pictures/homepage/facebook-brands.svg" alt="">
+                                <a href="https://www.facebook.com/login.php" target="_blank">Sử dụng tài khoản facebook</a>
+                            </li>
+                            <li>
+                                <img src="/pictures/homepage/github-brands.svg" alt="">
+                                <a href="https://github.com/">Sử dụng tài khoản github</a>
+                            </li>
+                        </ul>
+                        <p style="color: black; font-size: 12px;">Việc bạn sử dụng trang web này đồng nghĩa với việc bạn đã đồng ý với diều khoản sử dụng của chúng tôi</p>
+                    </div>
+                </main>
             </div>
-        </header>
+                <div class="login-image">
+                    <img src="/pictures/homepage/pexels-olia-danilevich-4974922.jpg" alt="Ảnh đẹp">
+                    <div class="quote-text">"Learning to code is learning to create and innovate."</div>
+                </div>
+            </div>   
+        </div> 
+        <div class="container">
+            <header>
+                <div class="logo">
+                    <a href="/main.html">
+                        <img src="/pictures/f8-logo.svg" alt="Logo" class="logo">
+                        <p><strong>Học lập trình để đi làm</strong></p>
+                    </a>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="Tìm kiếm...">
+                </div>
+                <div class="account">
+                    <div class="signup">
+                        <button class="btn-signup" id="open-popup-sign">Đăng ký</button>
+                    </div>
+                    <div class="login">
+                        <button class="btn-login" id="open-popup-btn">Đăng nhập</button>
+                    </div>
+                </div>
+            </header>
         <div class="sidebar">
             <div class="logo-sidebar">
                 <div class="homepage">
                     <a href="/main.html">
-                        <img src="./pictures/home-1-svgrepo-com.svg" alt="HomePage">
+                        <img src="/pictures/home-1-svgrepo-com.svg" alt="HomePage">
                         <p>Trang chủ</p>
                     </a>
                 </div>
                 <div class="path">
                     <a href="#">
-                        <img src="./pictures/path-fill-svgrepo-com.svg" alt="HomePage">
+                        <img src="/pictures/path-fill-svgrepo-com.svg" alt="HomePage">
                         <p>Lộ trình</p>
                     </a>
                 </div>
                 <div class="news">
                     <a href="blog.html">
-                        <img src="./pictures/news-svgrepo-com.svg" alt="HomePage">
+                        <img src="/pictures/news-svgrepo-com.svg" alt="HomePage">
                         <p>Bài viết</p>
+                    </a>
+                </div>
+                <div class="news">
+                    <a href="/cart.html">
+                        <img src="/pictures/homepage/cart-shopping-solid.svg" alt="HomePage">
+                        <p>Giỏ hàng</p>
                     </a>
                 </div>
             </div>
             <div class="more-sidebar">
                 <div class="info">
                     <a href="#">
-                        <img src="./pictures/home-1-svgrepo-com.svg" alt="HomePage">
+                        <img src="/pictures/home-1-svgrepo-com.svg" alt="HomePage">
                         <p>Liên hệ</p>
                     </a>
                 </div>
@@ -64,39 +147,34 @@
         <main>
             <div class="main-content">
                 <div class="infor">
-                    <h2>HTML CSS từ Zero đến Hero</h2>
-                    <p>Trong khóa này chúng ta sẽ cùng nhau xây dựng giao diện 2 trang web là The Band & Shopee.</p>
-                    
+                    <h2>Responsive Với Grid System</h2>
+                    <p>Trong khóa này chúng ta sẽ học về cách xây dựng giao diện web responsive với Grid System, tương tự Bootstrap 4.</p>
                     <h3>Bạn sẽ học được gì?</h3>
                     <ul>
-                        <li>Biết cách xây dựng giao diện web với HTML, CSS</li>
-                        <li>Biết cách phân tích giao diện website</li>
-                        <li>Biết cách đặt tên class CSS theo chuẩn BEM</li>
-                        <li>Biết cách làm giao diện web responsive</li>
-                        <li>Làm chủ Flexbox khi dựng bố cục website</li>
-                        <li>Sở hữu 2 giao diện web khi học xong khóa học</li>
-                        <li>Biết cách tự tạo động lực cho bản thân</li>
-                        <li>Biết cách tự học những kiến thức mới</li>
-                        <li>Học được cách làm UI chỉn chu, kỹ tính</li>
-                        <li>Nhận chứng chỉ khóa học do F8 cấp</li>
-                        
+                        <li>Biết cách xây dựng website Responsive</li>
+                        <li>Hiểu được tư tưởng thiết kế với Grid system
+                        </li>
+                        <li>Tự tay xây dựng được thư viện CSS Grid
+                        </li>
+                        <li>Tự hiểu được Grid layout trong bootstrap
+                        </li>
                     </ul>
             
                     <h3>Nội dung khóa học</h3>
-                    <p>12 bài học • Thời lượng 31 giờ 20 phút</p>  
+                    <p>12 bài học • Thời lượng 06 giờ 44 phút</p>  
                     <!-- Bổ sung thêm tính toán số bài học và tổng thời gian -->
 
                     <div class="accordion" onclick="toggleAccordion(this)">
                         <div class="title">
                           <span class="icon">+</span>
-                          1. Làm quen  
+                          1. Bắt đầu  
                         </div>
                         <div>3 bài học</div>
                       </div>
                       <div class="content">
                         <ul>
-                          <li><a href="bai1.html" target="_blank"><i class="fas fa-play"></i> 1.Cấu trúc 1 file HTML/CSS</a></li>
-                          <li><a href="bai2.html" target="_blank"><i class="fas fa-play"></i> 2.Sử dụng CSS trong HTML</a></li>
+                          <li><a href="bai1.html" target="_blank"><i class="fas fa-play"></i> 1.Responsive là gì?</a></li>
+                          <li><a href="bai2.html" target="_blank"><i class="fas fa-play"></i> 2.Chúng ta sẽ làm gì?</a></li>
                           <li><a href="https://www.youtube.com/watch?v=3JluqTojuME" target="_blank"><i class="fas fa-play"> </i> Bài học 3:(video)</a></li>
                         </ul>
                       </div>
@@ -104,14 +182,14 @@
                       <div class="accordion" onclick="toggleAccordion(this)">
                         <div class="title">
                           <span class="icon">+</span>
-                          2.Thuộc tính 
+                          2.Viewport, @media, breakpoint
                         </div>
                         <div>3 bài học</div>
                       </div>
                       <div class="content">
                         <ul>
-                          <li><a href="bai1.html" target="_blank"><i class="fas fa-play"></i> 4.Thuộc tính tạo nền</a></li>
-                          <li><a href="bai2.html" target="_blank"><i class="fas fa-play"></i> 5.Thuộc tính vị trí</a></li>
+                          <li><a href="bai1.html" target="_blank"><i class="fas fa-play"></i> 4.Khái niệm</a></li>
+                          <li><a href="bai2.html" target="_blank"><i class="fas fa-play"></i> 5.Media query</a></li>
                           <li><a href="https://www.youtube.com/watch?v=3JluqTojuME" target="_blank"><i class="fas fa-play"></i> Bài học 6:(video)</a></li>
                         </ul>
                       </div>
@@ -119,15 +197,15 @@
                       <div class="accordion" onclick="toggleAccordion(this)">
                         <div class="title">
                           <span class="icon">+</span>
-                          3. Xây dựng web The band  
+                          3. Grid system  
                         </div>
                         <div>4 bài học</div>
                       </div>
                       <div class="content">
                         <ul>
-                          <li><a href="bai1.html" target="_blank"><i class="fas fa-play"></i> 7.Phân tích dự án</a></li>
-                          <li><a href="bai2.html" target="_blank"><i class="fas fa-play"></i> 8.Tạo project base</a></li>
-                          <li><a href="bai2.html" target="_blank"><i class="fas fa-play"></i> 9.Các thành phần chính</a></li>
+                          <li><a href="bai1.html" target="_blank"><i class="fas fa-play"></i> 7.Hệ thống lưới</a></li>
+                          <li><a href="bai2.html" target="_blank"><i class="fas fa-play"></i> 8.Grid system</a></li>
+                          <li><a href="bai2.html" target="_blank"><i class="fas fa-play"></i> 9.Tạo đối tượng</a></li>
 
                           <li><a href="https://www.youtube.com/watch?v=3JluqTojuME" target="_blank"><i class="fas fa-play"></i> Bài học 10: (video)</a></li>
                         </ul>
@@ -160,14 +238,14 @@
                         </video>
                     </div> <br>
 
-                    <button class="register-btn"onclick="window.open('https://example.com/register','_blank')">Đăng ký học</button>
-                    <button class="add-to-cart"onclick="window.open('https://example.com/cart','_blank')">Thêm vào giỏ hàng</button>
+                    <a href="/cart.html"><button class="register-btn" onclick="addToCart('Responsive với Grid System', 1000000)">Đăng ký học</button></a>
+                    <button class="add-to-cart" onclick="addToCart('Responsive với Grid System', 1000000)">Thêm vào giỏ hàng</button>
 
                     <div>
                         <ul class="product-details">
                             <li>🕘<span>Trình độ cơ bản</span></li>
                             <li>🎞️<span>Tổng số <strong>12</strong> bài học</span></li>
-                            <li>⏱<span>Thời lượng <strong>31 giờ 20 phút</strong></span></li>
+                            <li>⏱<span>Thời lượng <strong>06 giờ 44 phút</strong></span></li>
                             <li>💻<span>Học mọi lúc, mọi nơi</span></li>
                         </ul>
                     </div>
