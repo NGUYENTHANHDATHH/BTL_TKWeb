@@ -6,18 +6,396 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
     <link rel="shortcut icon" href="./pictures/f8-logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="../main.css">
     <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 />
 
+<style>
+
+ .tieude{
+  margin-bottom:  2%;
+  
+}
+.noidungbaiviet  {
+margin-top: 24px;
+}
+.noidungbaiviet p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+  color: #333;
+  font-size: 16px;
+}
+.noidungbaiviet img {
+  display:block;
+  margin: 0 auto;
+  width: 80%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  max-height: 500px;
+}
+.anhvachuthich{
+  text-align: center;
+   margin: 24px 0;"
+}
+.anhvachuthich p{
+  font-style: italic; 
+  font-size: 14px; 
+  color: #666; 
+  margin-top: 8px;"
+}
+.anhvachuthich img{
+  display:block;
+  margin: 0 auto;
+  width: 80%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  max-height: 500px;
+  
+}
+a {  /* thẻ <a> */
+  color: inherit;
+  text-decoration: none;
+}
+.tungbaiviet{
+    display: none; /* Ẩn ban đầu */
+  border: 1.6px solid #e3d5d5;      /* tạo khung viền 2px màu xám đậm */
+  border-radius: 16px;         /* bo tròn góc (giá trị càng lớn càng tròn) */
+  padding: 20px;
+              /* khoảng cách giữa nội dung và khung */
+  width: 90%;                /* chiều rộng khung (tuỳ chọn) */
+  text-align: left;         /* căn trái nội dung bên trong khung */
+  margin-block-end:2%;          /* căn giữa khung trong trang */
+}
+.baivietvaquangcao{
+  display:flex;
+}
+.cacbaiviet{
+  flex: 1; /* Phần này sẽ chiếm không gian còn lại */
+  flex-direction: column;   /* Đặt chiều dọc cho các phần tử con */
+}
+.quangcao{
+ width: 23%;
+ height: auto;
+}
+.quangcao h2{
+  color: #757575;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.8;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+#anhquangcao{
+  position: sticky;
+  top: 18%;
+}
+.quangcao img{
+  display:block;
+  width: 100%;
+  height: 33%;
+  object-fit:contain;
+  border-radius: 12px;
+  margin-top: 25px;
+}
+.tacgia{
+  margin-bottom: 1%;
+  display: flex; 
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+} 
+
+.tenvaavatar{
+  margin-bottom: 2%;
+  display: flex; 
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.tacgia img{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.chuvaanh {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  align-items: center; 
+}
+.phanchu {
+  flex: 1;
+  flex-direction: column;
+}
+.phanchu h2 {
+  margin: 0 0 8px 0;
+  font-size: 20x;
+  font-weight: bold;
+  line-height: 1.3
+}
+.phanchu p {
+  margin: 0 0 12px 0;
+  color: #555;
+  line-height: 1.5
+}
+.phananh {
+  flex-shrink: 0;
+  width: 25%; 
+  height: auto;
+}
+.phananh img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  display:block;
+  max-height: 130px;
+  max-width: 100%;
+}
+.meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+  color: #2a2a2a;
+  margin-bottom:0px;
+}
+.tag {
+  background: #e3e3e3;
+  padding: 5px 10px;
+  border-radius: 12px;
+  border: none;
+  font-size: 14px;
+  color: #464646;
+  font-weight: 500;
+  margin-bottom: 2px;
+
+  
+}
+
+.quaylaitubaiviet{
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #fd981e;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.quaylaitubaiviet:hover {
+  background-color: #1e5fe0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+/*trên điện thoại */
+@media (max-width: 1000px) {
+  .chuvaanh {
+    flex-direction: column;
+  }
+  .phananh {
+    width: 0px;
+  }
+}
+@media (max-width: 1000px) {
+  .baivietvaquangcao{
+    flex-direction: column;
+    text-align: center;
+  }
+  .quangcao {
+    margin: 0 auto;        /* Căn giữa khối */
+    text-align: center;  /* Căn giữa nội dung bên trong */
+    width: 90%;
+    max-width: 700px;
+  }
+}
+.related-posts {
+  margin-top: 40px;
+  font-family: Arial, sans-serif;
+}
+.related-posts h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.related-posts ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.related-posts li {
+  margin-bottom: 8px;
+}
+
+.related-posts a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  transition: color 0.3s;
+}
+
+.related-posts a:hover {
+  color: #f05a28; 
+}
+
+.related-posts .underline {
+  border-bottom: 2px solid #f05a28;
+  width: 100%;
+  margin-top: 10px;
+}
+.read-more {
+  color: #f05a28;
+  font-weight: bold;
+  margin:10px;
+}
+
+.read-more a {
+  color: #f05a28;
+  text-decoration: none;
+}
+.Sharebutton {
+  padding: 10px 20px;
+  background-color: rgba(0,0,0,0);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.Sharebox {
+display: none;  
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.Sharebox a {
+  display: block;
+  margin: 5px 0;
+  text-decoration: none;
+  color: #000000;
+}
+
+.Sharebox a:hover {
+  color: #0b3f77;
+}
+
+.Share {
+  position: relative;
+  display: inline-block;
+}
+
+.like-button {
+  font-size: 22px;
+  font-weight: 600;
+
+  cursor: pointerr;
+  border: var(--like-border-width) solid var(--like-border-color);
+  background-color: var(--like-button-bg);
+  color: var(--like-text-color);
+
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Nút "Like" chưa nhấn */
+.default {
+  color: var(--like-text-color);
+  border-color: var(--like-border-color);
+}
+
+/* Nút "Like" khi nhấn */
+.liked {
+  color: var(--like-text-color-hover);
+  background-color: var(--like-fill-color); /* Tô màu khi nhấn */
+  border-color: var(--like-fill-color);
+}
+
+/* Hiệu ứng khi hover */
+.like-button:hover {
+  background-color: var(--like-fill-color);
+  color: var(--like-text-color-hover);
+}
+
+/* Container cho phân trang */
+.phan-trang {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 20px;
+font-family: Arial, sans-serif;
+}
+
+/* Các nút phân trang */
+.phan-trang button {
+padding: 8px 16px;
+border: 1px solid #ccc;
+background-color: #f9f9f9;
+color: #ce7d1b;
+cursor: pointer;
+margin: 0 4px;
+font-size: 16px;
+border-radius: 4px;
+transition: background-color 0.3s, color 0.3s;
+}
+
+/* Màu sắc khi hover */
+.phan-trang button:hover {
+
+color: rgb(5, 5, 4);
+
+}
+
+/* Nút trang hiện tại */
+.phan-trang button.active {
+color: white;
+
+font-weight: bold;
+}
+
+/* Nút trang "Trang trước" và "Trang sau" */
+.phan-trang .trang-truoc,
+.phan-trang .trang-sau {
+font-size: 18px;
+font-weight: bold;
+}
+
+/* Thêm hiệu ứng chuyển động khi nhấn */
+.phan-trang button:active {
+transform: scale(0.95);
+}
+
+/* Điều chỉnh khoảng cách giữa các nút */
+.phan-trang button + button {
+margin-left: 5px;
+}
+/* ket thuc ccss phan Blog------------------------------------- */
+
+
+</style>
+
+
+
 </head>
+
 <body>
     <div class="container">
         <header>
             <div class="logo">
-                <img src="./pictures/f8-logo.svg" alt="Logo" class="logo">
+                <img src="../pictures/f8-logo.svg" alt="Logo" class="logo">
                 <button class="quaylaitubaiviet" onclick="window.history.back();">◀ Quay Lại</button>
                 <p><strong></strong></p>
             </div>
@@ -37,25 +415,25 @@
             <div class="logo-sidebar">
                 <div class="homepage">
                     <a href="#">
-                        <img src="./pictures/home-1-svgrepo-com.svg" alt="HomePage">
+                        <img src="../pictures/home-1-svgrepo-com.svg" alt="HomePage">
                         <p>Trang chủ</p>
                     </a>
                 </div>
                 <div class="path">
                     <a href="#">
-                        <img src="./pictures/path-fill-svgrepo-com.svg" alt="HomePage">
+                        <img src="../pictures/path-fill-svgrepo-com.svg" alt="HomePage">
                         <p>Lộ trình</p>
                     </a>
                 </div>
                 <div class="news">
                     <a href="blog.html">
-                        <img src="./pictures/news-svgrepo-com.svg" alt="HomePage">
+                        <img src="../pictures/news-svgrepo-com.svg" alt="HomePage">
                         <p>Bài viết</p>
                     </a>
                 </div>
                 <div class="info">
                     <a href="#">
-                        <img src="./pictures/home-1-svgrepo-com.svg" alt="HomePage">
+                        <img src="../pictures/home-1-svgrepo-com.svg" alt="HomePage">
                         <p>Liên hệ</p>
                     </a>
                 </div>
@@ -69,6 +447,20 @@
                     <div>
                       <strong>Trọng Nam Đoàn <span style="color: blue;">✔️</span></strong>
                       <p style="font-size: 14px; color: #888;">6 tháng trước · 5 phút đọc</p>
+                    </div>
+                  </div>
+                  <!-- Thêm nút Like và Share bên phải -->
+                  <div class="actions">
+                    <button class="like-button default" onclick="toggleLike(event)">
+                      <i class="fas fa-thumbs-up"></i>
+                    </button>
+                    <div class="Share">
+                      <button class="Sharebutton" onclick="boxclick(event)">&#8943;</button>
+                      <div class="Sharebox">
+                        <a href="#" target="_blank">Chia sẻ lên Facebook</a>
+                        <a href="#" target="_blank">Chia sẻ lên Twitter</a>
+                        <a href="#" target="_blank">Chia sẻ lên Zalo</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -93,7 +485,7 @@
                 </div>
               
                 <div>
-                  <a href="JavaScript.html"><span class="tag">#JavaScript</span></a> 
+                    <button class="tag" onclick="">#JavaScript</button>
                   
                 </div>
                 <div class="related-posts">
@@ -108,21 +500,259 @@
                     <div class="underline"></div>
                   </div>
               </div>
+
               <!-- Link tiếp theo -->
           <p class="read-more">
           >> <a href="#">Xem tiếp</a> · 2 phút đọc
            </p>
   
             <!-- Danh mục bài viết -->
-           <div class="tags-section">
-           <p>XEM CÁC BÀI VIẾT THEO CHỦ ĐỀ</p><br>
-            <div class="tags">
-                <a href="reactjs.html"><span class="tag">ReactJS</span></a>
-                <a href="front-end.html"><span class="tag">Front-end</span></a>
-                <a href="JavaScript.html"><span class="tag">JavaScript</span></a>   
-            </div>
-  </div>
+            <div class="tags-section">
+                <p>XEM CÁC BÀI VIẾT THEO CHỦ ĐỀ</p><br>
+                 <div class="tags">
+                   <button class="tag" onclick="locTheoChuyenMuc('ReactJS')">ReactJS</button>
+                   <button class="tag" onclick="locTheoChuyenMuc('JavaScript')">JavaScript</button>
+                   <button class="tag" onclick="locTheoChuyenMuc('Front-end')">Front-end</button>
+                   <button class="tag" onclick="hienThiTatCaBaiViet()">Tất cả</button>   
+                 </div><br>
+
+                 <div class="cacbaiviet"> <!-- các bài viết -->
+
+                    <div class="tungbaiviet" data-category="ReactJS">
+                        <!-- bài viết 1 -->
+                        <div class="tacgia">
+                          <div class="tenvaavatar">
+                            <img src="https://ih1.redbubble.net/image.5362323478.8266/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt=" "> 
+                            <span>Đặng Sơn</span> 
+                          </div>
+                         
+                          <div> 
+                            <button class="like-button default" onclick="toggleLike(event)">
+                              <i class="fas fa-thumbs-up"></i>
+                            </button>
+                              
+                            <div class="Share">
+                              <button class="Sharebutton" onclick="boxclick(event)">&#8943;</button>
+                              <div class="Sharebox">
+                                <a href="#" target="_blank">Chia sẻ lên Facebook</a>
+                                <a href="#" target="_blank">Chia sẻ lên Twitter</a>
+                                <a href="#" target="_blank">Chia sẻ lên Zalo</a>
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </div> <!-- tác giả -->
+                        
+                        <div class="chuvaanh">
+                            <div class="phanchu">
+                                <a href="baiviet1.html"><h2>Hoàng Bảo Trung - Học viên tiêu biểu của F8 tỏa sáng với dự án "AI Powered Learning"</h2></a>
+                                <p>Trong thời đại công nghệ số 4.0, việc học không còn bó buộc trong những cuốn sách truyền thống. Giờ đây, trí tuệ nhân tạo (AI) đang...</p>
+                                <div class="meta">
+                                    <!-- <a><button class="tag" onclick="locTheoChuyenMuc('ReactJS')">ReactJS</button></a> -->
+                                    <span>6 tháng trước · 6 phút đọc</span>
+                                </div>
+                            </div>
+                            <div class="phananh">
+                                <img src="https://files.fullstack.edu.vn/f8-prod/blog_posts/11504/66fd03cd7b3e4.jpg" alt="Ảnh">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="tungbaiviet" data-category="JavaScript">
+                        <!-- bài viết 2 -->
+                        <div class="tacgia">
+                          <div class="tenvaavatar">
+                            <img src="https://files.fullstack.edu.vn/f8-prod/user_avatars/13286/65fa6676d4644.jpg" alt=" "> 
+                            <span>Trọng Nam Đoàn</span>
+                          </div>  
+                          <div> 
+                            <button class="like-button default" onclick="toggleLike(event)">
+                              <i class="fas fa-thumbs-up"></i></button>
+                            <div class="Share">
+                              <button class="Sharebutton" onclick="boxclick(event)">&#8943;</button>
+                              <div class="Sharebox">
+                                <a href="#" target="_blank">Chia sẻ lên Facebook</a>
+                                <a href="#" target="_blank">Chia sẻ lên Twitter</a>
+                                <a href="#" target="_blank">Chia sẻ lên Zalo</a>
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </div> <!-- tác giả -->
+                        <div class="chuvaanh">
+                            <div class="phanchu">
+                                <a href="baiviet2.html"><h2>Tôi đã viết Chrome Extension đầu tiên của mình bằng Github Copilot như thế nào ?</h2></a>
+                                <p>Câu chuyện của tôi là Tôi đang học tiếng Nhật trên một trang web là Dungmori.com, và tôi học từ mới trên trang web Quizlet...</p>
+                                <div class="meta">
+                                    <!-- <a><button class="tag" onclick="locTheoChuyenMuc('JavaScript')">JavaScript</button></a> -->
+                                    <span>1 năm trước · 4 phút đọc</span>
+                                </div>
+                            </div>
+                            <div class="phananh">
+                                <img src="https://files.fullstack.edu.vn/f8-prod/blog_posts/9976/65fa652ce3a64.jpg" alt="Ảnh">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="tungbaiviet" data-category="Front-end">
+                        <!-- bài viết 3 -->
+                        <div class="tacgia">
+                          <div class="tenvaavatar">
+                            <img src="https://files.fullstack.edu.vn/f8-prod/user_avatars/256991/63b63dc6657a1.jpg" alt="avatar ">    
+                            <span>Trịnh Minh Tuấn</span>
+                          </div> 
+                          <div> 
+                            <button class="like-button default" onclick="toggleLike(event)">
+                              <i class="fas fa-thumbs-up"></i></button>
+                            <div class="Share">
+                              <button class="Sharebutton" onclick="boxclick(event)">&#8943;</button>
+                              <div class="Sharebox">
+                                <a href="#" target="_blank">Chia sẻ lên Facebook</a>
+                                <a href="#" target="_blank">Chia sẻ lên Twitter</a>
+                                <a href="#" target="_blank">Chia sẻ lên Zalo</a>
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </div> 
+                        <div class="chuvaanh">
+                            <div class="phanchu">
+                                <a href="blogthanhphan/baiviet1.html"><h2>Tự học lập trình có khó không? 5 tips để tự học tốt hơn</h2></a>
+                                <p>Lập trình đang dần trở thành một ngành “hot” và là xu thế của nhiều người trẻ hiện nay. Vậy tự học lập trình có khó không? Bài viết này sẽ...</p>
+                                <div class="meta">
+                                    <!-- <a><button class="tag" onclick="locTheoChuyenMuc('Front-end')">Front-end</button></a> -->
+                                    <span>1 tháng trước · 7 phút đọc </span>
+                                </div>
+                            </div>
+                            <div class="phananh">
+                                <img src="https://files.fullstack.edu.vn/f8-prod/blog_posts/6352/63e1f988bfcdf.jpg" alt="Ảnh"> 
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="tungbaiviet" data-category="ReactJS">
+                        <!-- bài viết 4 -->
+                        <div class="tacgia">
+                            <div><img src="" alt=" ">  
+                            <span>Son Dang</span>
+                          </div>
+                          <div> 
+                            <button class="like-button default" onclick="toggleLike(event)">
+                              <i class="fas fa-thumbs-up"></i></button>
+                            <div class="Share">
+                              <button class="Sharebutton" onclick="boxclick(event)">&#8943;</button>
+                              <div class="Sharebox">
+                                <a href="#" target="_blank">Chia sẻ lên Facebook</a>
+                                <a href="#" target="_blank">Chia sẻ lên Twitter</a>
+                                <a href="#" target="_blank">Chia sẻ lên Zalo</a>
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </div> <!-- tác giả -->
+                        <div class="chuvaanh">
+                            <div class="phanchu">
+                                <h2>Hoàng Bảo Trung - Học viên tiêu biểu của F8 tỏa sáng với dự án "AI Powered Learning"</h2>
+                                <p>Trong thời đại công nghệ số 4.0, việc học không còn bó buộc trong những cuốn sách truyền thống. Giờ đây, trí tuệ nhân tạo (AI) đang...</p>
+                                <div class="meta">
+                                    <!-- <a><button class="tag" onclick="locTheoChuyenMuc('ReactJS')">ReactJS</button></a> -->
+                                    <span>6 tháng trước · 6 phút đọc</span>
+                                </div>
+                            </div>
+                            <div class="phananh">
+                                <img src="https://files.fullstack.edu.vn/f8-prod/blog_posts/11503/66fd03291e58f.jpg" alt="Ảnh">
+                            </div>
+                        </div>
+                    </div>
+    
+                    
+                    
+                </div> <!-- cac bài viết -->
+       </div>
+
           </main>
+          <script>
+             // Hàm lọc bài viết theo chuyên mục (ReactJS, JavaScript, Front-end)
+        function locTheoChuyenMuc(tag) {
+            const baiVietLoc = document.querySelectorAll('.tungbaiviet');
+            baiVietLoc.forEach(baiViet => {
+                const category = baiViet.getAttribute('data-category');
+                if (category === tag || tag === 'Tất cả') {
+                    baiViet.style.display = 'block'; // Hiển thị bài viết
+                } else {
+                    baiViet.style.display = 'none'; // Ẩn bài viết
+                }
+            });
+        }
+
+        // Hàm hiển thị tất cả bài viết
+        function hienThiTatCaBaiViet() {
+            const baiVietLoc = document.querySelectorAll('.tungbaiviet');
+            baiVietLoc.forEach(baiViet => {
+                baiViet.style.display = 'block';
+            });
+        }
+        function boxclick(event) {
+                     const btn = event.currentTarget;
+                     const shareBox = btn.nextElementSibling; // Lấy box liền sau nút
+                     const allBoxes = document.querySelectorAll('.Sharebox');
+
+                     allBoxes.forEach(box => {
+                         if (box !== shareBox) {
+                             box.style.display = "none"; // Ẩn các box khác
+                         }
+                     });
+
+              // Toggle box gần nút
+                shareBox.style.display = shareBox.style.display === "block" ? "none" : "block";
+               }            
+
+          // Tự động ẩn khi click ra ngoài
+         window.addEventListener("click", function(suKien) {
+           const hop = document.getElementById("box");
+            const nut = document.querySelector(".Sharebutton");
+            if (!hop.contains(suKien.target) && !nut.contains(suKien.target)) {
+              hop.style.display = "none";
+            }
+         });
+
+            
+              function toggleLike(event) {
+              const likeButton = event.target.closest('.like-button'); // Lấy phần tử like-button gần nhất
+
+              // Kiểm tra trạng thái của nút "Like"
+              if (likeButton.classList.contains("default")) {
+                  likeButton.classList.remove("default");
+                  likeButton.classList.add("liked");
+              } else {
+                  likeButton.classList.remove("liked");
+                  likeButton.classList.add("default");
+              }
+          }
+
+                        
+
+                 // Hàm hiển thị các bài viết trên trang hiện tại
+                 function hienThiBaiViet() {
+                     const viTriBatDau = (trangHienTai - 1) * soBaiVietMoiTrang;
+                     const viTriKetThuc = trangHienTai * soBaiVietMoiTrang;
+    
+                     // Ẩn tất cả bài viết
+                     danhSachBaiViet.forEach((baiViet, index) => {
+                         if (index >= viTriBatDau && index < viTriKetThuc) {
+                                              baiViet.style.display = 'block';  // Hiển thị bài viết trong khoảng
+                         } else {
+                             baiViet.style.display = 'none';  // Ẩn các bài viết không thuộc trang hiện tại
+                         }
+                     });
+                   
+                     }
+
+                
+
+                 // Hiển thị bài viết khi trang được tải
+                 hienThiBaiViet();
+            </script>
         <footer>
             <div class="footer-container">
                 <div class="footer-column">
@@ -184,16 +814,7 @@
                     <a href="#"><img src="/pictures/tiktok-svgrepo-com.svg" alt="TikTok"></a>
                 </div>
             </div>
-          </footer>
+        </footer>
     </div>
-    <script>
-        const heartBtn = document.getElementById('heartBtn');
-const heartIcon = document.getElementById('heartIcon');
-
-heartBtn.addEventListener('click', () => {
-  heartIcon.classList.toggle('fa-solid');
-  heartIcon.classList.toggle('fa-regular');
-    });
-    </script>
 </body>
 </html>

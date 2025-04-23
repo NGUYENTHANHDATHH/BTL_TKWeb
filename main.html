@@ -1,5 +1,4 @@
     <!DOCTYPE html>
-
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -7,53 +6,12 @@
         <title>Trang chủ</title>
         <link rel="shortcut icon" href="./pictures/f8-logo.svg" type="image/x-icon">
         <link rel="stylesheet" href="./main.css">
-        <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <script src="./js/login.js"></script>
-        <script src="./main.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+        <script src="./js/main.js"></script>
     </head>
-
     <body>
-        <div class="BG-color"></div>
-        <div class="Popup">
-            <div class="Login-popup">
-                <div class="login-content">
-                <span class="btn-close">&times;</span>
-                <header>
-                    <img src="./pictures/f8-logo.svg" alt="">
-                    <h2>Đăng nhập vào f8</h2>
-                </header>
-                <main>
-                    <div>
-                        <p>Mỗi người nên sử dụng riêng một tài khoản, tài khoản nhiều người sử dụng chung sẽ bị khóa</p>
-                    </div>
-                    <div class="login-option">
-                        <ul>
-                            <li>
-                                <img src="./pictures/homepage/google-brands-solid.svg" alt="">
-                                <a href="https://accounts.google.com/signin">Sử dụng tài khoản google</a>
-                            </li>
-                            <li>
-                                <img src="./pictures/homepage/facebook-brands.svg" alt="">
-                                <a href="https://www.facebook.com/login.php" target="_blank">Sử dụng tài khoản facebook</a>
-                            </li>
-                            <li>
-                                <img src="./pictures/homepage/github-brands.svg" alt="">
-                                <a href="https://github.com/">Sử dụng tài khoản github</a>
-                            </li>
-                        </ul>
-                        <p style="color: black; font-size: 12px;">Việc bạn sử dụng trang web này đồng nghĩa với việc bạn đã đồng ý với diều khoản sử dụng của chúng tôi</p>
-                    </div>
-                </main>
-            </div>
-                <div class="login-image">
-                    <img src="./pictures/homepage/pexels-olia-danilevich-4974922.jpg" alt="Ảnh đẹp">
-                    <div class="quote-text">"Learning to code is learning to create and innovate."</div>
-                </div>
-            </div>   
-        </div> 
         <div class="BG-color"></div>
         <div class="Popup" id="Popup-sign">
             <div class="Login-popup">
@@ -61,28 +19,40 @@
                 <span class="btn-close" id="btn-close">&times;</span>
                 <header>
                     <img src="./pictures/f8-logo.svg" alt="">
-                    <h2>Đăng ký tài khoản f8</h2>
+                    <h2>Đăng nhập vào f8</h2>
                 </header>
                 <main>
-                    <div>
-                        <p>Mỗi người nên sử dụng riêng một tài khoản, tài khoản nhiều người sử dụng chung sẽ bị khóa</p>
+                    <div class="form-toggle">
+                        <button class="toggle-btn active" id="loginToggle">Đăng nhập</button>
+                        <button class="toggle-btn" id="signupToggle">Đăng ký</button>
                     </div>
                     <div class="login-option">
-                        <ul>
-                            <li>
-                                <img src="./pictures/homepage/google-brands-solid.svg" alt="">
-                                <a href="https://accounts.google.com/signin">Sử dụng tài khoản google</a>
-                            </li>
-                            <li>
-                                <img src="./pictures/homepage/facebook-brands.svg" alt="">
-                                <a href="https://www.facebook.com/login.php" target="_blank">Sử dụng tài khoản facebook</a>
-                            </li>
-                            <li>
-                                <img src="./pictures/homepage/github-brands.svg" alt="">
-                                <a href="https://github.com/">Sử dụng tài khoản github</a>
-                            </li>
-                        </ul>
-                        <p style="color: black; font-size: 12px;">Việc bạn sử dụng trang web này đồng nghĩa với việc bạn đã đồng ý với diều khoản sử dụng của chúng tôi</p>
+                        <form id="loginForm" class="auth-form active">
+                            <div class="form-group">
+                                <input type="email" id="loginEmail" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="loginPassword" placeholder="Mật khẩu" required>
+                            </div>  
+                            <button type="submit" class="btn-submit">Đăng nhập</button>
+                        </form>
+                        <form id="signupForm" class="auth-form">
+                            <div class="form-group">
+                                <input type="text" id="signupName" placeholder="Họ và tên" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="signupEmail" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="signupPassword" placeholder="Mật khẩu" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="signupConfirmPassword" placeholder="Xác nhận mật khẩu" required>
+                            </div>
+                            <button type="submit" class="btn-submit">Đăng ký</button>
+                        </form>
+                        <p style="color: black; font-size: 12px; margin: 10px;">Hoặc đăng nhập bằng</p>
+                        <div id="google-btn"></div>
                     </div>
                 </main>
             </div>
@@ -123,14 +93,15 @@
                     <div class="path">
                         <a href="#">
                             <img src="./pictures/path-fill-svgrepo-com.svg" alt="HomePage">
-                            <p>Lộ trình</p>
+                            <p>Liên hệ</p>
                         </a>
                     </div>
                     <div class="news">
-                        <a href="blog.html">
+                        <a href="blogthanhphan/blog.html">
                             <img src="./pictures/news-svgrepo-com.svg" alt="HomePage">
                             <p>Bài viết</p>
                         </a>
+                        
                     </div>
                     <div class="news">
                         <a href="./cart.html">
@@ -143,26 +114,50 @@
                     <div class="info">
                         <a href="#">
                             <img src="./pictures/home-1-svgrepo-com.svg" alt="HomePage">
-                            <p>Liên hệ</p>
+                            <p>Giới thiệu</p>
                         </a>
                     </div>
                 </div>
             </div>
             <main>
-                <div class="slideshow">
-                    <div class="name">
+                <div class="slider">
+                    <div class="slides">
+                      <div class="slide active">
+                        <h2>Học ReactJS Miễn Phí!</h2>
+                        <p>Khóa học ReactJS từ cơ bản tới nâng cao. Kết quả của
+                            khóa học này là bạn có thể làm hầu hết các dự án thường gặp với ReactJS.</p>
+                        <button>ĐĂNG KÝ NGAY</button>
+                      </div>
+                      <!-- Slide khác -->
+                      <div class="slide">
                         <h2>F8 trên Facebook</h2>
-                        <p>F8 được nhắc nhở ở mọi nơi, ở đâu có việc làm
-                            ở đó có f8
-                        </p>
+                        <p>F8 được nhắc tới ở mọi nơi, ở đâu có cơ hội
+                             việc làm cho nghề IT và có những con người yêu thích lập trình F8 sẽ ở đó.</p>
+                        <button>ĐĂNG KÝ KÊNH</button>
+                      </div>
+                      <!-- Thêm slide nếu cần -->
+                      <div class="slide">
+                        <h2>F8 trên Youtube</h2>
+                        <p>F8 được nhắc tới ở mọi nơi, ở đâu có cơ hội
+                             việc làm cho nghề IT và có những con người yêu thích lập trình F8 sẽ ở đó.</p>
+                        <button>ĐĂNG KÝ KÊNH</button>
                     </div>
-                    <div class="more">
-                        <a href="https://www.facebook.com/f8vnofficial">XEM THÊM</a>
+                    <div class="slide">
+                        <h2>Học HTML, CSS cho người mới</h2>
+                        <p>Thực hành dự án với Figma, hàng trăm
+                             bài tập, hướng dẫn 100% bởi Sơn Đặng, tặng kèm Flashcards, v.v.</p>
+                        <button>ĐĂNG KÝ NGAY</button>
+                      </div>
                     </div>
+                    <div class="nut">
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                    </div>
+                    <div class="dots"></div>
                 </div>
                 <div class="name-course">
                     <h2>Khóa học nổi bật</h2>
-                    <a href="#!">Xem lộ trình ></a>
+                    <a href="#!">Xem giỏ hàng ></a>
                 </div>
                 <div class="course">
                     <div class="course-item">
