@@ -1,4 +1,20 @@
-/* Bắt đầu Css của phần Blog------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --color-primary: linear-gradient(to bottom right, #FFA500, #FF4500);
+  --color-secondary: #ff4500;
+  --color-text: #000000;
+  --color-background: #f5f5f5;
+  --color-border: #ccc;
+  --color-enroll: #4fccf2;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
 .tieude{
     margin-bottom:  2%;
     
@@ -167,27 +183,6 @@
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   }
-  /*trên điện thoại */
-  @media (max-width: 700px) {
-    .chuvaanh {
-      flex-direction: column;
-    }
-    .phananh {
-      width: 0px;
-    }
-  }
-  @media (max-width: 1000px) {
-    .baivietvaquangcao{
-      flex-direction: column;
-      text-align: center;
-    }
-    .quangcao {
-      margin: 0 auto;        /* Căn giữa khối */
-      text-align: center;  /* Căn giữa nội dung bên trong */
-      width: 90%;
-      max-width: 700px;
-    }
-  }
   .related-posts {
     margin-top: 40px;
     font-family: Arial, sans-serif;
@@ -233,24 +228,7 @@
   }
   
   /* ket thuc ccss phan Blog------------------------------------- */
-  
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-:root {
-    --color-primary: linear-gradient(to bottom right, #FFA500, #FF4500);
-    --color-secondary: #ff4500;
-    --color-text: #000000;
-    --color-background: #f5f5f5;
-    --color-border: #ccc;
-    --color-enroll: #4fccf2;
-}
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-}
+
 .container{
     display: grid;
     grid-template-columns: 10% 60% 30%;
@@ -267,6 +245,8 @@ header{
     border-bottom: solid 1px #ccc;
     display: flex;
     align-items: center;
+    position: fixed;
+    top: 0;
     flex-wrap: nowrap;
     justify-content: center;
     background-color: #f5f5f5;
@@ -391,33 +371,76 @@ main {
     padding: 20px;
     margin: 20px;
 }
-.slideshow{
+.slider {
+  padding: 20px;
+  width: 100%;
+  height: 250px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(to right, #5daee3, #2b9dce);
+  color: white;
+  }
+
+  .slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    margin: 0 10px;
+  min-width: 100%;
+  box-sizing: border-box;
+  }
+  .slide button {
+    padding: 10px 20px;
+    margin-top: 30px;
+  background: transparent;
+  border: solid 1px white;
+  border-radius: 20px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  }
+  .nut{
     display: flex;
-    width: 100%;
-    height: 200px;
-    border-radius: 20px;
-    background: linear-gradient(to right, #4fccf2, #3289e0);
-    margin: 0;
-    flex-direction: column;
-    justify-content: center;
-}
-.slideshow div{
-    margin: 30px;
-    color: #ffffff;
-}
-.slideshow p{
-    color: #ffffff;
-    margin: 10px 0;
-}
-.slideshow a{
-    text-decoration: none;
-    padding: 5px 10px;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: bold;
-    border: solid 3px #ffffff;
-    border-radius: 20px;
-}
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .prev, .next {
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 999px;
+  padding: 10px;
+  cursor: pointer;
+  }
+
+  .prev { left: 10px; }
+  .next { right: 10px; }
+
+  .dots {
+  text-align: center;
+  padding: 10px;
+  }
+
+  .dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  }
+
+  .dots span.active {
+  background: #555;
+  }
+
 .name-course{
     display: flex;
     justify-content: space-between;
@@ -734,15 +757,7 @@ color: #003399;
   margin-right: 8px;        
 }
 
-/* Responsive cho màn hình nhỏ */
-@media (max-width: 768px) {
-  .main-content {
-      flex-direction: column;
-  }
-  .infor, .product {
-      max-width: 100%;
-  }
-}
+
 /* Hết sản phẩm */
 .name-course{
   display: flex;
@@ -927,7 +942,7 @@ footer img{
   overflow: hidden;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255);
 }
 .login-option li{
   display: flex;
@@ -1036,15 +1051,37 @@ footer img{
         background-color: #f8f8f8;
         z-index: 1000; 
     }
-    .logo-sidebar{
-        flex-direction: row;
-        flex-grow: 5;
+      .logo-sidebar{
+          flex-direction: row;
+          flex-grow: 5;
+      }
+      .logo-sidebar div{
+          margin: 0 10px;
+      }  
+      .more-sidebar{
+          display: block;
+      }
+      .main-content {
+        flex-direction: column;
     }
-    .logo-sidebar div{
-        margin: 0 10px;
+    .infor, .product {
+        max-width: 100%;
     }
-    
-    .more-sidebar{
-        display: block;
+    .baivietvaquangcao{
+      flex-direction: column;
+      text-align: center;
+    }
+    .quangcao {
+      margin: 0 auto;        
+      text-align: center;  
+      width: 90%;
+      max-width: 700px;
+    }
+    .chuvaanh {
+      flex-direction: column;
+    }
+    .phananh {
+      width: 0px;
     }
   }
+  

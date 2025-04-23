@@ -1,5 +1,4 @@
     <!DOCTYPE html>
-
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -7,14 +6,9 @@
         <title>Trang chủ</title>
         <link rel="shortcut icon" href="./pictures/f8-logo.svg" type="image/x-icon">
         <link rel="stylesheet" href="./main.css">
-        <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <script src="./js/login.js"></script>
-        <script src="./main.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+        <script src="./js/login.js"></script>
     </head>
-
     <body>
         <div class="BG-color"></div>
         <div class="Popup">
@@ -123,7 +117,7 @@
                     <div class="path">
                         <a href="#">
                             <img src="./pictures/path-fill-svgrepo-com.svg" alt="HomePage">
-                            <p>Lộ trình</p>
+                            <p>Liên hệ</p>
                         </a>
                     </div>
                     <div class="news">
@@ -143,26 +137,50 @@
                     <div class="info">
                         <a href="#">
                             <img src="./pictures/home-1-svgrepo-com.svg" alt="HomePage">
-                            <p>Liên hệ</p>
+                            <p>Giới thiệu</p>
                         </a>
                     </div>
                 </div>
             </div>
             <main>
-                <div class="slideshow">
-                    <div class="name">
+                <div class="slider">
+                    <div class="slides">
+                      <div class="slide active">
+                        <h2>Học ReactJS Miễn Phí!</h2>
+                        <p>Khóa học ReactJS từ cơ bản tới nâng cao. Kết quả của
+                            khóa học này là bạn có thể làm hầu hết các dự án thường gặp với ReactJS.</p>
+                        <button>ĐĂNG KÝ NGAY</button>
+                      </div>
+                      <!-- Slide khác -->
+                      <div class="slide">
                         <h2>F8 trên Facebook</h2>
-                        <p>F8 được nhắc nhở ở mọi nơi, ở đâu có việc làm
-                            ở đó có f8
-                        </p>
+                        <p>F8 được nhắc tới ở mọi nơi, ở đâu có cơ hội
+                             việc làm cho nghề IT và có những con người yêu thích lập trình F8 sẽ ở đó.</p>
+                        <button>ĐĂNG KÝ KÊNH</button>
+                      </div>
+                      <!-- Thêm slide nếu cần -->
+                      <div class="slide">
+                        <h2>F8 trên Youtube</h2>
+                        <p>F8 được nhắc tới ở mọi nơi, ở đâu có cơ hội
+                             việc làm cho nghề IT và có những con người yêu thích lập trình F8 sẽ ở đó.</p>
+                        <button>ĐĂNG KÝ KÊNH</button>
                     </div>
-                    <div class="more">
-                        <a href="https://www.facebook.com/f8vnofficial">XEM THÊM</a>
+                    <div class="slide">
+                        <h2>Học HTML, CSS cho người mới</h2>
+                        <p>Thực hành dự án với Figma, hàng trăm
+                             bài tập, hướng dẫn 100% bởi Sơn Đặng, tặng kèm Flashcards, v.v.</p>
+                        <button>ĐĂNG KÝ NGAY</button>
+                      </div>
                     </div>
+                    <div class="nut">
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                    </div>
+                    <div class="dots"></div>
                 </div>
                 <div class="name-course">
                     <h2>Khóa học nổi bật</h2>
-                    <a href="#!">Xem lộ trình ></a>
+                    <a href="#!">Xem giỏ hàng ></a>
                 </div>
                 <div class="course">
                     <div class="course-item">
