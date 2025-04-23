@@ -14,7 +14,7 @@
     color: #333;
     font-size: 16px;
   }
-  noidungbaiviet img {
+  .noidungbaiviet img {
     display:block;
     margin: 0 auto;
     width: 80%;
@@ -43,25 +43,25 @@
     max-height: 500px;
     
   }
-  a {  /* thẻ <a> */
+  a {  
     color: inherit;
     text-decoration: none;
   }
   .tungbaiviet{
-    border: 1.6px solid #e3d5d5;      /* tạo khung viền 2px màu xám đậm */
-    border-radius: 16px;         /* bo tròn góc (giá trị càng lớn càng tròn) */
+    display: none;
+    border: 1.6px solid #e3d5d5;      
+    border-radius: 16px;         
     padding: 20px;
-                /* khoảng cách giữa nội dung và khung */
-    width: 90%;                /* chiều rộng khung (tuỳ chọn) */
-    text-align: left;         /* căn trái nội dung bên trong khung */
-    margin-block-end:2%;          /* căn giữa khung trong trang */
+    width: 90%;                
+    text-align: left;         
+    margin-block-end:2%;          
   }
   .baivietvaquangcao{
     display:flex;
   }
   .cacbaiviet{
-    flex: 1; /* Phần này sẽ chiếm không gian còn lại */
-    flex-direction: column;   /* Đặt chiều dọc cho các phần tử con */
+    flex: 1; 
+    flex-direction: column;   
   }
   .quangcao{
    width: 23%;
@@ -170,8 +170,8 @@
     padding: 10px 20px;
     font-size: 16px;
     border: none;
-    background-color: #fd981e;
-    color: white;
+    background-color: #ee8207;
+    color: rgb(179, 189, 193);
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -180,7 +180,7 @@
     gap: 8px;
   }
   .quaylaitubaiviet:hover {
-    background-color: #1e5fe0;
+    background-color: #ddcb07;
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   }
@@ -199,8 +199,8 @@
       text-align: center;
     }
     .quangcao {
-      margin: 0 auto;        /* Căn giữa khối */
-      text-align: center;  /* Căn giữa nội dung bên trong */
+      margin: 0 auto;        
+      text-align: center;  
       width: 90%;
       max-width: 700px;
     }
@@ -297,26 +297,26 @@
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
   
-  /* Nút "Like" chưa nhấn */
+  
   .default {
     color: var(--like-text-color);
     border-color: var(--like-border-color);
   }
   
-  /* Nút "Like" khi nhấn */
+  
   .liked {
     color: var(--like-text-color-hover);
-    background-color: var(--like-fill-color); /* Tô màu khi nhấn */
+    background-color: var(--like-fill-color); 
     border-color: var(--like-fill-color);
   }
   
-  /* Hiệu ứng khi hover */
+  
   .like-button:hover {
     background-color: var(--like-fill-color);
     color: var(--like-text-color-hover);
   }
   
-  /* Container cho phân trang */
+  
   .phan-trang {
   display: flex;
   justify-content: center;
@@ -325,7 +325,7 @@
   font-family: Arial, sans-serif;
   }
   
-  /* Các nút phân trang */
+  
   .phan-trang button {
   padding: 8px 16px;
   border: 1px solid #ccc;
@@ -338,33 +338,28 @@
   transition: background-color 0.3s, color 0.3s;
   }
   
-  /* Màu sắc khi hover */
+  
   .phan-trang button:hover {
   
   color: rgb(5, 5, 4);
-  
   }
   
-  /* Nút trang hiện tại */
   .phan-trang button.active {
   color: white;
   
   font-weight: bold;
   }
   
-  /* Nút trang "Trang trước" và "Trang sau" */
   .phan-trang .trang-truoc,
   .phan-trang .trang-sau {
   font-size: 18px;
   font-weight: bold;
   }
   
-  /* Thêm hiệu ứng chuyển động khi nhấn */
   .phan-trang button:active {
   transform: scale(0.95);
   }
   
-  /* Điều chỉnh khoảng cách giữa các nút */
   .phan-trang button + button {
   margin-left: 5px;
   }
