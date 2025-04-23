@@ -1,21 +1,7 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-:root {
-  --color-primary: linear-gradient(to bottom right, #FFA500, #FF4500);
-  --color-secondary: #ff4500;
-  --color-text: #000000;
-  --color-background: #f5f5f5;
-  --color-border: #ccc;
-  --color-enroll: #4fccf2;
-}
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-}
-.tieude{
+
+  /* Bắt đầu Css của phần Blog------------------------------------- */
+
+  .tieude{
     margin-bottom:  2%;
     
   }
@@ -28,7 +14,7 @@ body {
     color: #333;
     font-size: 16px;
   }
-  .noidungbaiviet img {
+  noidungbaiviet img {
     display:block;
     margin: 0 auto;
     width: 80%;
@@ -39,13 +25,13 @@ body {
   }
   .anhvachuthich{
     text-align: center;
-     margin: 24px 0;
+     margin: 24px 0;"
   }
   .anhvachuthich p{
     font-style: italic; 
     font-size: 14px; 
     color: #666; 
-    margin-top: 8px;
+    margin-top: 8px;"
   }
   .anhvachuthich img{
     display:block;
@@ -102,9 +88,20 @@ body {
     margin-top: 25px;
   }
   .tacgia{
-    margin-bottom: 2%;
-    display: flex; align-items: center;
+    margin-bottom: 1%;
+    display: flex; 
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
   } 
+  
+  .tenvaavatar{
+    margin-bottom: 2%;
+    display: flex; 
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
   .tacgia img{
     width: 25px;
     height: 25px;
@@ -153,18 +150,22 @@ body {
     gap: 12px;
     align-items: center;
     font-size: 14px;
-    color: #666;
+    color: #2a2a2a;
     margin-bottom:0px;
   }
   .tag {
-    background: #f0f0f0;
-    padding: 6px 10px;
+    background: #e3e3e3;
+    padding: 5px 10px;
     border-radius: 12px;
+    border: none;
     font-size: 14px;
-    color: #333;
+    color: #464646;
     font-weight: 500;
+    margin-bottom: 2px;
+  
     
   }
+  
   .quaylaitubaiviet{
     padding: 10px 20px;
     font-size: 16px;
@@ -182,6 +183,27 @@ body {
     background-color: #1e5fe0;
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+  
+  @media (max-width: 1000px) {
+    .chuvaanh {
+      flex-direction: column;
+    }
+    .phananh {
+      width: 0px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .baivietvaquangcao{
+      flex-direction: column;
+      text-align: center;
+    }
+    .quangcao {
+      margin: 0 auto;        /* Căn giữa khối */
+      text-align: center;  /* Căn giữa nội dung bên trong */
+      width: 90%;
+      max-width: 700px;
+    }
   }
   .related-posts {
     margin-top: 40px;
@@ -226,8 +248,152 @@ body {
     color: #f05a28;
     text-decoration: none;
   }
+  .Sharebutton {
+    padding: 10px 20px;
+    background-color: rgba(0,0,0,0);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
   
+  .Sharebox {
+  display: none;  
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+  
+  .Sharebox a {
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .Sharebox a:hover {
+    color: #0b3f77;
+  }
+  
+  .Share {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .like-button {
+    font-size: 22px;
+    font-weight: 600;
+  
+    cursor: pointerr;
+    border: var(--like-border-width) solid var(--like-border-color);
+    background-color: var(--like-button-bg);
+    color: var(--like-text-color);
+  
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  /* Nút "Like" chưa nhấn */
+  .default {
+    color: var(--like-text-color);
+    border-color: var(--like-border-color);
+  }
+  
+  /* Nút "Like" khi nhấn */
+  .liked {
+    color: var(--like-text-color-hover);
+    background-color: var(--like-fill-color); /* Tô màu khi nhấn */
+    border-color: var(--like-fill-color);
+  }
+  
+  /* Hiệu ứng khi hover */
+  .like-button:hover {
+    background-color: var(--like-fill-color);
+    color: var(--like-text-color-hover);
+  }
+  
+  /* Container cho phân trang */
+  .phan-trang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  }
+  
+  /* Các nút phân trang */
+  .phan-trang button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #ce7d1b;
+  cursor: pointer;
+  margin: 0 4px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Màu sắc khi hover */
+  .phan-trang button:hover {
+  
+  color: rgb(5, 5, 4);
+  
+  }
+  
+  /* Nút trang hiện tại */
+  .phan-trang button.active {
+  color: white;
+  
+  font-weight: bold;
+  }
+  
+  /* Nút trang "Trang trước" và "Trang sau" */
+  .phan-trang .trang-truoc,
+  .phan-trang .trang-sau {
+  font-size: 18px;
+  font-weight: bold;
+  }
+  
+  /* Thêm hiệu ứng chuyển động khi nhấn */
+  .phan-trang button:active {
+  transform: scale(0.95);
+  }
+  
+  /* Điều chỉnh khoảng cách giữa các nút */
+  .phan-trang button + button {
+  margin-left: 5px;
+  }
   /* ket thuc ccss phan Blog------------------------------------- */
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --color-primary: linear-gradient(to bottom right, #FFA500, #FF4500);
+  --color-secondary: #ff4500;
+  --color-text: #000000;
+  --color-background: #f5f5f5;
+  --color-border: #ccc;
+  --color-enroll: #4fccf2;
+  /* root cua nut LIKE BLOG */ 
+  --like-bg-color: transparent;
+  --like-border-width: 2px; 
+  --like-text-color: #c6c8cb; 
+  --like-text-color-hover: #0c88c2; 
+/* -------------------------------- */
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
 
 .container{
     display: grid;
