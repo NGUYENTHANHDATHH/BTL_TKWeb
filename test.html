@@ -1,128 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .slider {
-        position: relative;
-        width: 80%;
-        margin: auto;
-        overflow: hidden;
-        border-radius: 20px;
-        background: linear-gradient(to right, #2980b9, #8e44ad);
-        color: white;
-        }
+<html>
+  <head>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+      function handleCredentialResponse(response) {
+        const data = jwt_decode(response.credential);
+        console.log("Đăng nhập thành công với Google:", data);
+        alert(`Chào ${data.name}`);
+      }
 
-        .slides {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-        }
-
-        .slide {
-        min-width: 100%;
-        padding: 40px;
-        box-sizing: border-box;
-        }
-
-        .prev, .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: white;
-        color: black;
-        border: none;
-        border-radius: 50%;
-        padding: 10px;
-        cursor: pointer;
-        }
-
-        .prev { left: 10px; }
-        .next { right: 10px; }
-
-        .dots {
-        text-align: center;
-        padding: 10px;
-        }
-
-        .dots span {
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        background: #ccc;
-        border-radius: 50%;
-        margin: 0 5px;
-        cursor: pointer;
-        }
-
-        .dots span.active {
-        background: #555;
-        }
-
-    </style>
-</head>
-<body>
-    <div class="slider">
-        <div class="slides">
-          <div class="slide active">
-            <h2>Học ReactJS Miễn Phí!</h2>
-            <p>Khóa học từ cơ bản tới nâng cao...</p>
-            <button>ĐĂNG KÝ NGAY</button>
-          </div>
-          <!-- Slide khác -->
-          <div class="slide">
-            <h2>Slide thứ 2</h2>
-            <p>Nội dung khác...</p>
-          </div>
-          <!-- Thêm slide nếu cần -->
-          <div class="slide">
-          <h2>Slide thứ 2</h2>
-          <p>Nội dung khác...</p>
-        </div>
-        <div class="slide">
-            <h2>Slide thứ 2</h2>
-            <p>Nội dung khác...</p>
-          </div>
-        </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
-        <div class="dots"></div>
-    </div>
-<script>
-        const slides = document.querySelectorAll('.slide');
-        const dotsContainer = document.querySelector('.dots');
-        let currentSlide = 0;
-
-        // Tạo dots
-        slides.forEach((_, i) => {
-        const dot = document.createElement('span');
-        if (i === 0) dot.classList.add('active');
-        dotsContainer.appendChild(dot);
-        dot.addEventListener('click', () => goToSlide(i));
+      window.onload = function () {
+        google.accounts.id.initialize({
+          client_id: "1029582278212-nliomd3fv8vfko3hqpakqmebb7obt3so.apps.googleusercontent.com",
+          callback: handleCredentialResponse,
         });
-
-        function goToSlide(n) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        slides[n].classList.add('active');
-        document.querySelector('.slides').style.transform = `translateX(-${n * 100}%)`;
-
-        const dots = document.querySelectorAll('.dots span');
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[n].classList.add('active');
-
-        currentSlide = n;
-        }
-
-        document.querySelector('.next').onclick = () => {
-        let next = (currentSlide + 1) % slides.length;
-        goToSlide(next);
-        };
-
-        document.querySelector('.prev').onclick = () => {
-        let prev = (currentSlide - 1 + slides.length) % slides.length;
-        goToSlide(prev);
-        };
-      </script>
-</body>
-</html>l
+        google.accounts.id.renderButton(
+          document.getElementById("google-btn"),
+          { theme: "outline", size: "large" }
+        );
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+  </head>
+  <body>
+    <div id="google-btn"></div>
+  </body>
+</html>

@@ -946,7 +946,9 @@ footer img{
 }
 .login-option li{
   display: flex;
-  margin: 40px;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
   padding: 15px;
   list-style: none;
   background-color: #fcfafa;
@@ -959,7 +961,8 @@ footer img{
   background-color: #dedbdb;
 }
 .login-option li img{
-  width: 15px;
+  width: 20px;
+  height: 20px;
 }
 .login-option li a{
   margin: 0 0 0 10px;
@@ -1111,13 +1114,13 @@ noidungbaiviet img {
 }
 .anhvachuthich{
   text-align: center;
-   margin: 24px 0;"
+   margin: 24px 0;
 }
 .anhvachuthich p{
   font-style: italic; 
   font-size: 14px; 
   color: #666; 
-  margin-top: 8px;"
+  margin-top: 8px;
 }
 .anhvachuthich img{
   display:block;
@@ -1455,3 +1458,166 @@ transform: scale(0.95);
 margin-left: 5px;
 }
 /* ket thuc ccss phan Blog------------------------------------- */
+
+/* User Profile Styles */
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #666;
+}
+
+.user-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 200px;
+    display: none;
+    z-index: 1000;
+}
+
+.user-profile:hover .user-menu {
+    display: block;
+}
+
+.user-info {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.user-info span {
+    display: block;
+    font-size: 14px;
+}
+
+.user-info span:first-child {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.user-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.user-menu li a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Form Toggle Styles */
+.form-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.toggle-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f0f0f0;
+    color: #666;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+}
+.user-avatar{
+  margin-right: 20px ;
+}
+
+/* Google Sign-In Button Styles */
+#google-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#google-btn iframe {
+    width: 100% !important;
+    height: 40px !important;
+}
+
+.login-option li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    padding: 15px;
+    list-style: none;
+    background-color: #fcfafa;
+    border: 1px solid #ccc;
+    border-radius: 36px;
+    height: auto;
+    text-align: center;
+}
+
+.login-option li img {
+    width: 20px;
+    height: 20px;
+}
