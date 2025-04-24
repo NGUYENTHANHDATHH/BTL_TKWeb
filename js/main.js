@@ -315,20 +315,16 @@ document.querySelectorAll('.heart-btn').forEach(button => {
     });
 });
 
-function toggleAccordion(element) {
-    element.classList.toggle("open");
-    const icon = element.querySelector(".icon");
-    icon.textContent = element.classList.contains("open") ? "–" : "+";
-  }
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".accordion").forEach(accordion => {
+        accordion.addEventListener("click", function toggleAccordion(element) {
+            element.classList.toggle("open");
+            const icon = element.querySelector(".icon");
+            if (icon) {
+                icon.textContent = element.classList.contains("open") ? "–" : "+";
+            }
+        });
+    });
+});
 
 
-
-
-  
-  document.querySelector('.register-btn').addEventListener('click', () => {
-    window.open('https://example.com/register','_blank');
-  });
-  
-  document.querySelector('.add-to-cart').addEventListener('click', () => {
-    window.open('https://example.com/cart','_blank');
-  });

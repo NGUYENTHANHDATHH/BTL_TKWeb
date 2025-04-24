@@ -185,26 +185,7 @@
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   }
   
-  @media (max-width: 1000px) {
-    .chuvaanh {
-      flex-direction: column;
-    }
-    .phananh {
-      width: 0px;
-    }
-  }
-  @media (max-width: 1000px) {
-    .baivietvaquangcao{
-      flex-direction: column;
-      text-align: center;
-    }
-    .quangcao {
-      margin: 0 auto;        
-      text-align: center;  
-      width: 90%;
-      max-width: 700px;
-    }
-  }
+
   .related-posts {
     margin-top: 40px;
     font-family: Arial, sans-serif;
@@ -289,7 +270,7 @@
     font-size: 22px;
     font-weight: 600;
   
-    cursor: pointerr;
+    cursor: pointer;
     border: var(--like-border-width) solid var(--like-border-color);
     background-color: var(--like-button-bg);
     color: var(--like-text-color);
@@ -549,7 +530,7 @@ main {
   }
 
   .slide {
-    margin: 0 10px;
+    padding: 20px;
   min-width: 100%;
   box-sizing: border-box;
   }
@@ -947,6 +928,8 @@ footer {
     background-color: #000000;
     color: #ffffff;
     padding: 40px 80px;
+    width: 100%;
+    height: auto;
 }
 footer a{
     color: var(--color-border);
@@ -1162,93 +1145,6 @@ footer img{
   justify-content: center;
   align-items: center;
   }
-/* responsive */
-@media screen and (max-width: 1000px) {
-    .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 50px auto auto auto;
-        grid-template-areas: 
-            "header"
-            "main"
-            "footer"
-            "sidebar";
-    }
-    .search input[type="text"] {
-        width: 100%;
-    }
-    header {
-        width: 100%;
-        height: 10%;
-    }
-    .logo{
-        flex-grow: 1;
-    }
-    .logo p{
-        display: none;
-    }
-    .search{
-        flex-grow: 8;
-    }
-    .account{
-        flex-grow: 1;
-    }
-    .account button.btn-signup{
-        display: none;
-    }
-    .logo-sidebar {
-        position: static;
-        margin: 20px 0;
-    }
-    .course-item {
-        width: 45%;
-    }
-    .sidebar{
-        position: fixed;
-        flex-direction: row;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 70px;
-        border: solid 1px #ccc;
-        align-items: center;
-        justify-content: center;
-        background-color: #f8f8f8;
-        z-index: 1000; 
-    }
-      .logo-sidebar{
-          flex-direction: row;
-          flex-grow: 5;
-      }
-      .logo-sidebar div{
-          margin: 0 10px;
-      }  
-      .more-sidebar{
-          display: block;
-      }
-      .main-content {
-        flex-direction: column;
-    }
-    .infor, .product {
-        max-width: 100%;
-    }
-    .baivietvaquangcao{
-      flex-direction: column;
-      text-align: center;
-    }
-    .quangcao {
-      margin: 0 auto;        
-      text-align: center;  
-      width: 90%;
-      max-width: 700px;
-    }
-    .chuvaanh {
-      flex-direction: column;
-    }
-    .phananh {
-      width: 0px;
-    }
-  }
-
   /* Bắt đầu Css của phần Blog------------------------------------- */
 
 .tieude{
@@ -1434,27 +1330,7 @@ a {  /* thẻ <a> */
   transform: translateY(-2px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
-/*trên điện thoại */
-@media (max-width: 1000px) {
-  .chuvaanh {
-    flex-direction: column;
-  }
-  .phananh {
-    width: 0px;
-  }
-}
-@media (max-width: 1000px) {
-  .baivietvaquangcao{
-    flex-direction: column;
-    text-align: center;
-  }
-  .quangcao {
-    margin: 0 auto;        /* Căn giữa khối */
-    text-align: center;  /* Căn giữa nội dung bên trong */
-    width: 90%;
-    max-width: 700px;
-  }
-}
+
 .related-posts {
   margin-top: 40px;
   font-family: Arial, sans-serif;
@@ -1828,25 +1704,7 @@ h5 {
   line-height: 1.6;
   color: white;
 }
-/* Mobile */
-@media (max-width: 768px) {
-  .content {
-    flex-direction: column;
-  }
-  .text,
-  .image {
-    flex: 1 1 100%;
-  }
-  h5 {
-    font-size: 22px;
-  }
-  .text h6 {
-    font-size: 18px;
-  }
-  .text p {
-    font-size: 14px;
-  }
-}
+
 /* Vision and Values Section */
 .vision-values-section {
   background-color: white;
@@ -1863,18 +1721,6 @@ h5 {
   font-size: 20px;
   margin-top: 40px;
   margin-bottom: 16px;
-}
-/* Responsive for Vision Section */
-@media (max-width: 768px) {
-  .vision-values-section {
-    padding: 40px 15px;
-  }
-  .section-title {
-    font-size: 18px;
-  }
-  .container-narrow {
-    padding: 0 10px;
-  }
 }
 .vision-values-section p {
   line-height: 1.7;
@@ -1920,15 +1766,7 @@ h5 {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-@media (max-width: 768px) {
-  .strategy-item.with-image {
-    flex-direction: column;
-  }
-  .strategy-item.with-image .image,
-  .strategy-item.with-image .text {
-    flex: 1 1 100%;
-  }
-}
+
 .working-environment {
   background: linear-gradient(to right, #ffffff, #ffffff);
   color: rgb(49, 32, 158);
@@ -1997,35 +1835,6 @@ h5 {
 .apply-form button:hover {
   background-color: #0056b3;
 }
-/* Responsive Mobile */
-@media (max-width: 600px) {
-  .working-environment {
-    padding: 40px 15px;
-  }
-  .working-environment .container1 {
-    padding: 0 10px;
-  }
-  .working-environment h5 {
-    font-size: 22px;
-  }
-  .working-environment p {
-    font-size: 14px;
-  }
-  .apply-form {
-    padding: 20px;
-  }
-  .apply-form h6 {
-    font-size: 18px;
-  }
-  .apply-form input,
-  .apply-form textarea {
-    font-size: 14px;
-  }
-  .apply-form button {
-    font-size: 15px;
-    padding: 10px;
-  }
-}
 .floating-label {
   position: fixed;
   bottom: 30px;
@@ -2089,14 +1898,163 @@ h5 {
   color: #fff;
   line-height: 1.6;
 }
-@media (max-width: 768px) {
+/* responsive */
+@media screen and (max-width: 768px) {
+  html{
+    overflow-x: hidden;
+  }
+  main{
+    width: auto;
+  }
+  .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 50px auto auto auto;
+      grid-template-areas: 
+          "header"
+          "main"
+          "footer"
+          "sidebar";
+  }
+  .search input[type="text"] {
+      width: 100%;
+  }
+  header {
+      width: 100%;
+      height: 10%;
+  }
+  .logo {
+      flex-grow: 1;
+  }
+  .logo p {
+      display: none;
+  }
+  .search {
+      flex-grow: 8;
+  }
+  .account {
+      flex-grow: 1;
+  }
+  .account button.btn-signup {
+      display: none;
+  }
+  .slider{
+      width: 100%;
+      height: auto;
+      overflow-x: hidden;
+  }
+  .slide{
+    width: 1px;
+  }
+  .slide p{
+    width: 100%;
+
+  }
+  main{
+    width: 100%;
+  }
+  .logo-sidebar {
+      position: static;
+      margin: 20px 0;
+  }
+  .course-item {
+      width: 45%;
+      max-width: 100%;
+  }
+  .sidebar {
+      position: fixed;
+      flex-direction: row;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      border: solid 1px #ccc;
+      align-items: center;
+      justify-content: center;
+      background-color: #f8f8f8;
+      z-index: 1000; 
+  }
+  .logo-sidebar {
+      flex-direction: row;
+      flex-grow: 5;
+  }
+  .logo-sidebar div {
+      margin: 0 10px;
+  }  
+  footer{
+    width: 100%;
+    height: auto;
+  }
+  .main-content {
+      flex-direction: column;
+  }
+  .infor, .product {
+      max-width: 100%;
+  }
+  .baivietvaquangcao {
+      flex-direction: column;
+      text-align: center;
+  }
+  .quangcao {
+      margin: 0 auto;
+      text-align: center;
+      width: 90%;
+      max-width: 700px;
+  }
+  .chuvaanh {
+      flex-direction: column;
+  }
+  .phananh {
+      width: 0;
+  }
   .faq-section {
-    padding: 40px 15px;
+      padding: 40px 15px;
   }
   .faq-question {
-    font-size: 16px;
+      font-size: 16px;
   }
   .faq-answer p {
-    font-size: 15px;
+      font-size: 15px;
+  }
+  .working-environment {
+      padding: 40px 15px;
+  }
+  .working-environment .container1 {
+      padding: 0 10px;
+  }
+  .working-environment h5 {
+      font-size: 22px;
+  }
+  .working-environment p {
+      font-size: 14px;
+  }
+  .apply-form {
+      padding: 20px;
+  }
+  .apply-form h6 {
+      font-size: 18px;
+  }
+  .apply-form input,
+  .apply-form textarea {
+      font-size: 14px;
+  }
+  .apply-form button {
+      font-size: 15px;
+      padding: 10px;
+  }
+  .strategy-item.with-image {
+      flex-direction: column;
+  }
+  .strategy-item.with-image .image,
+  .strategy-item.with-image .text {
+      flex: 1 1 100%;
+  }
+  .vision-values-section {
+      padding: 40px 15px;
+  }
+  .section-title {
+      font-size: 18px;
+  }
+  .container-narrow {
+      padding: 0 10px;
   }
 }
