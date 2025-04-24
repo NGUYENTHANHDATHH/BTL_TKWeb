@@ -315,6 +315,7 @@ document.querySelectorAll('.heart-btn').forEach(button => {
     });
 });
 
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".accordion").forEach(accordion => {
         accordion.addEventListener("click", function toggleAccordion(element) {
@@ -328,3 +329,35 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+=======
+document.addEventListener('DOMContentLoaded', function () {
+    // Ẩn tất cả .content khi trang load
+    document.querySelectorAll('.content').forEach(function(content) {
+      content.style.display = 'none';
+    });
+  });
+  
+  // Toggle accordion khi click
+  function toggleAccordion(element) {
+    const content = element.nextElementSibling;
+    const icon = element.querySelector('.icon');
+  
+    if (content.style.display === 'none' || content.style.display === '') {
+      content.style.display = 'block';
+      icon.textContent = '-';
+    } else {
+      content.style.display = 'none';
+      icon.textContent = '+';
+    }
+  }
+  
+
+
+  document.querySelector('.register-btn').addEventListener('click', () => {
+    window.open('https://example.com/register','_blank');
+  });
+  
+  document.querySelector('.add-to-cart').addEventListener('click', () => {
+    window.open('https://example.com/cart','_blank');
+  });
+>>>>>>> refs/remotes/origin/main
