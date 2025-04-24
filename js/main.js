@@ -315,16 +315,29 @@ document.querySelectorAll('.heart-btn').forEach(button => {
     });
 });
 
-function toggleAccordion(element) {
-    element.classList.toggle("open");
-    const icon = element.querySelector(".icon");
-    icon.textContent = element.classList.contains("open") ? "–" : "+";
-  }
-
-
-
-
+document.addEventListener('DOMContentLoaded', function () {
+    // Ẩn tất cả .content khi trang load
+    document.querySelectorAll('.content').forEach(function(content) {
+      content.style.display = 'none';
+    });
+  });
   
+  // Toggle accordion khi click
+  function toggleAccordion(element) {
+    const content = element.nextElementSibling;
+    const icon = element.querySelector('.icon');
+  
+    if (content.style.display === 'none' || content.style.display === '') {
+      content.style.display = 'block';
+      icon.textContent = '-';
+    } else {
+      content.style.display = 'none';
+      icon.textContent = '+';
+    }
+  }
+  
+
+
   document.querySelector('.register-btn').addEventListener('click', () => {
     window.open('https://example.com/register','_blank');
   });
