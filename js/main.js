@@ -116,7 +116,7 @@ class UserAuth {
 
     initGoogleSignIn() {
         google.accounts.id.initialize({
-            client_id: "1029582278212-nliomd3fv8vfko3hqpakqmebb7obt3so.apps.googleusercontent.com",
+            client_id: "1029582278212-0949khufaaiko67p7efvpu0bqjrhdj7c.apps.googleusercontent.com",
             callback: this.handleGoogleSignIn.bind(this)
         });
 
