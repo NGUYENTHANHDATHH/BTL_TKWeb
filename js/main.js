@@ -88,7 +88,6 @@ class UserAuth {
         this.init();
         this.initGoogleSignIn();
     }
-
     init() {
         // Initialize forms
         const loginForm = document.getElementById('loginForm');
