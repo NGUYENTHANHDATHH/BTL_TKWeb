@@ -18,10 +18,20 @@ function hienThiTatCaBaiViet() {
         baiViet.style.display = 'block'; // Hiển thị tất cả bài viết
     });
 }
-        function boxclick() {
-    const hop = document.getElementById("box");
-    hop.style.display = hop.style.display === "block" ? "none" : "block";
-  }
+        function boxclick(event) {
+             const btn = event.currentTarget;
+             const shareBox = btn.nextElementSibling; // Lấy box liền sau nút
+             const allBoxes = document.querySelectorAll('.Sharebox');
+
+             allBoxes.forEach(box => {
+                 if (box !== shareBox) {
+                     box.style.display = "none"; // Ẩn các box khác
+                 }
+             });
+
+// Toggle box gần nút
+shareBox.style.display = shareBox.style.display === "block" ? "none" : "block";
+}                 
 
   // Tự động ẩn khi click ra ngoài
  window.addEventListener("click", function(suKien) {
