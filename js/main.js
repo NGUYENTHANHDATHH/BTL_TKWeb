@@ -80,6 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 });
 
+window.onload = function () {
+    if (window.google && google.accounts && google.accounts.id) {
+      const auth = new UserAuth();
+      auth.initGoogleSignIn();
+    } else {
+      console.error("Google API chưa sẵn sàng");
+    }
+  };
 // User Authentication
 class UserAuth {
     constructor() {
@@ -116,7 +124,7 @@ class UserAuth {
 
     initGoogleSignIn() {
         google.accounts.id.initialize({
-            client_id: "1029582278212-nliomd3fv8vfko3hqpakqmebb7obt3so.apps.googleusercontent.com",
+            client_id: "1029582278212-qqub8ibk9nkvckk8g2s0971h0evhfneu.apps.googleusercontent.com",
             callback: this.handleGoogleSignIn.bind(this)
         });
 
@@ -125,7 +133,7 @@ class UserAuth {
             { 
                 theme: "outline", 
                 size: "large",
-                width: "100%",
+                width: "300px",
                 text: "signin_with"
             }
         );
